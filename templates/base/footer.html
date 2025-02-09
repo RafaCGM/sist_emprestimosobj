@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} COAPAC {% endblock %}</title>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <main>
+        {% block content %}
+            <!-- O conteúdo das páginas será inserido aqui -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Aqui é o footer</p>
+        <p>&copy; 2025 COAPAC</p>
+    </footer>
+</body>
+</html>

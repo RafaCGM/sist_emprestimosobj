@@ -1,0 +1,29 @@
+/*=============== CONFIG ===============*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*=============== HEADER ===============*/
+
+header {
+    border: 3px solid blue;
+    text-align: center;
+
+}
+
+/*=============== FOOTER ===============*/
+
+footer {
+    border: 3px solid salmon; 
+    text-align: center;
+
+}

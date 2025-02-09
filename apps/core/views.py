@@ -6,3 +6,9 @@ from django.shortcuts import render
 
 def view_home(request):
     return render(request, 'home.html')
+
+def view_login(request):
+    return render(request, 'login.html')
+
+def view_cadastro(request):
+    return render(request, 'cadastro.html')
