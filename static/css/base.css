@@ -4,26 +4,112 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    border: none;
+    outline: none;
     font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 5rem 0 0 0;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+}
+
+ul {
+    list-style: none;
 }
 
 a {
     text-decoration: none;
 }
 
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+}
 
 /*=============== HEADER ===============*/
 
 header {
-    border: 3px solid blue;
-    text-align: center;
-
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(132, 137, 141, 0.25);
+    background-color: white;
+    z-index: 100;
 }
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+}
+
+.nav_list {
+    display: flex; 
+    gap: 2rem;  
+}
+
+.nav_list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_list li i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav_link {
+    position: relative;
+    color: black;
+    font-weight: 500;
+}
+
+.nav_logo{
+    width: 10vw;
+}
+
+.nav_input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+.nav_botao {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color:rgb(113, 216, 113);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
 
 /*=============== FOOTER ===============*/
 
 footer {
-    border: 3px solid salmon; 
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
     text-align: center;
-
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
+
+
