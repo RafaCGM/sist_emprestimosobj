@@ -69,13 +69,15 @@ img {
 }
 
 .home_card-botao {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: rgb(152, 255, 152);
-    border-radius: 0.5rem; 
-    font-size: 1rem; 
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 2px 4px rgba(132, 137, 141, 0.25);
+     padding: 10px 15px;
+    font-size: 16px;
+    background-color:rgb(113, 216, 113);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.5s ease-in-out;
 }
 
 .home_card-descricao {
@@ -84,4 +86,8 @@ img {
 
 .home_card-botao a {
     color: black;
+}
+
+.home_card-botao:hover {
+    transform: translateY(-.5rem);
 }

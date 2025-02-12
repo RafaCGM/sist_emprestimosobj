@@ -65,6 +65,7 @@ nav {
 .nav_list li i {
     font-size: 1.5rem;
     cursor: pointer;
+    color: black;
 }
 
 .nav_link {
@@ -89,7 +90,7 @@ nav {
     padding: 10px 15px;
     font-size: 16px;
     background-color:rgb(113, 216, 113);
-    color: white;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
