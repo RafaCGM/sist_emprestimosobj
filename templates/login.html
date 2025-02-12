@@ -4,8 +4,40 @@
 
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/login.css' %}">
-    <div class="container">
-        <h1> Página de login </h1>
-        <p><a href="{% url 'cadastro' %}">Ir para cadastro</a></p>
+
+<section class="forms form_container">
+    <div class="form login">
+        <div class="form-content">
+            <h2>Login</h2>
+
+            <form action="" method="">
+
+                <div class="form_input">
+                    <input type="text" placeholder="Matricula" class="input">
+                </div>
+
+                <div class="form_input">
+                    <input type="password" placeholder="Senha" class="input">
+                </div>
+
+                <div class="form_link">
+                    <a href="">Esqueceu sua senha ?</a>
+                </div>
+
+                <div class="form_botao">
+                    <button>Acessar</button>
+                </div>
+
+                <div class="form_link">
+                    <span>Não possui uma conta? <a href="">Cadastrar</a></span>
+                </div>
+                
+            </form>
+        </div>
     </div>
+</section>
+
 {% endblock %}
+
+
+<!--  <p><a href="{% url 'cadastro' %}">Ir para cadastro</a></p> -->

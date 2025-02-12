@@ -9,11 +9,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    margin: 5rem 0 0 0;
-    
-}
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 1rem;
