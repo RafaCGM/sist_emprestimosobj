@@ -56,7 +56,7 @@ ROOT_URLCONF = 'SistCOAPAC.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,13 +119,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'banco_dados.Usuario'
+
+# Variáveis de Login
+
+# LOGIN_URL = 'view_login'
+
+# LOGIN_REDIRECT = 'view_perfil'

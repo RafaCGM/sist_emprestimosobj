@@ -1,0 +1,31 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} Categorias {% endblock %}
+
+{% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
+
+<div class="bloco">
+    <h1> Categorias </h1>
+    <br>
+    <p><a href="{% url 'cad_categoria' %}"> CADASTRAR </a></p>
+    <br>
+    {% for categoria in catg %}       
+        <p>
+            <strong>Nome:</strong> {{categoria.nome}}
+            | <a href=""> EDITAR </a>
+            | <a href=""> REMOVER </a>
+        </p>
+        <br>
+
+        {% empty %}
+
+        <p>Não há nenhum cadastro</p>
+        
+    {% endfor %}
+    <br>
+    <br>
+    <p><a href="{% url 'home' %}">Voltar</a></p>
+</div>
+
+{% endblock %}

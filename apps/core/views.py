@@ -1,8 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.banco_dados.models import Categoria
-from apps.banco_dados.forms import CategoriaForm
 from django.http import JsonResponse
-# Create your views here.
 
 # EasterEgg que ninguém se importa: lá vai o condenado abrir mais uma view
 
@@ -13,25 +10,12 @@ def view_login(request):
     return render(request, 'login.html')
 
 def view_cadastro(request):
-    form = CategoriaForm(request.POST or None)
+    return render(request, 'cadastro.html')
 
-    if form.is_valid():
-        form.save()
-        return redirect(view_perfil)
-
-    context = {
-        'form_categoria': form
-    }
-    return render(request, 'cadastro.html', context)
-
-#local onde vai ser possível ver as informações
 def view_perfil(request):
-    allC = Categoria.objects.all()
-    context = {
-        'catg': allC
-    }
-    return render(request, 'perfil.html', context)
+    return render(request, 'perfil.html')
 
+'''
 def view_Json(request):
     comments = [
         {'name' : 'Prenho Souza',
@@ -48,3 +32,4 @@ def view_Json(request):
     ]
 
     return JsonResponse({'comments' : comments})
+'''

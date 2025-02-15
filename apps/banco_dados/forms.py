@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 class CategoriaForm(ModelForm):
     class Meta:
         model = Categoria
-        fields = ['nome', 'descricao']
+        fields = ['nome','descricao']
 
 class UsuarioForm(UserCreationForm):
     class Meta:
