@@ -1,0 +1,16 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} perfil
+ {% endblock %}
+
+
+<h1>
+    teste
+</h1>
+
+{% for categoria in catg %}
+<p>Nome: {{categoria.nome}}</p>
+<p>Descrição: {{categoria.descricao}}</p>
+{% empty %}
+<p>Não há nenhum cadastro</p>
+{% endfor %} 
