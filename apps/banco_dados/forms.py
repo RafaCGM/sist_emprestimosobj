@@ -1,6 +1,6 @@
 from django.forms import ModelForm
-from .models import Usuario
-from .models import Categoria
+from django.forms import ModelChoiceField
+from .models import *
 from django.contrib.auth.forms import UserCreationForm
 
 class CategoriaForm(ModelForm):

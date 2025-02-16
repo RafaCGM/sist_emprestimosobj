@@ -9,9 +9,6 @@ def view_home(request):
 def view_login(request):
     return render(request, 'login.html')
 
-def view_cadastro(request):
-    return render(request, 'cadastro.html')
-
 def view_perfil(request):
     return render(request, 'perfil.html')
 

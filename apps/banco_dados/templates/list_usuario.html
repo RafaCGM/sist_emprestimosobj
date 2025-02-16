@@ -1,0 +1,38 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} Usuarios {% endblock %}
+
+{% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
+
+<div class="bloco">
+    <h1> Usuarios </h1>
+    <br>
+    <p><a href="{% url 'cad_categoria' %}"> CADASTRAR </a></p>
+    <br>
+    {% for x in usuario %}       
+
+
+            <p><strong>Nome:</strong> {{x.nome}}</p>
+
+            <p><strong>Matricula:</strong> {{x.matricula}}</p>
+
+            <p><strong>Telefone:</strong> {{x.telefone}}</p>
+
+            <strong>Email:</strong> {{x.email}}
+            | <a href=""> EDITAR </a>
+            | <a href=""> REMOVER </a>
+
+        <br>
+
+        {% empty %}
+
+        <p>Não há nenhum cadastro de usuario</p>
+        
+    {% endfor %}
+    <br>
+    <br>
+    <p><a href="{% url 'home' %}">Voltar para página inicial</a></p>
+</div>
+
+{% endblock %}
