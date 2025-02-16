@@ -1,0 +1,28 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} Cadastro {% endblock %}
+
+{% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/registro.css' %}">
+
+    <div class="container">
+        <h1> Página de cadastro </h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <p>Matricula: {{ form_registro.matricula }}</p>
+            <p>Nome Completo: {{ form_registro.nome }}</p>
+            <p>Usuário: {{ form_registro.username }}</p>
+            <p>Telefone: {{ form_registro.telefone }}</p>
+            <p>E-mail: {{ form_registro.email }}</p>
+            <p>Senha: {{ form_registro.password1 }}</p>
+            <p>Repetir Senha: {{ form_registro.password2 }}</p>
+
+            <p><input type="submit" value="Cadastrar"></p>
+        </form>
+
+        <p><a href="{% url 'login' %}">Ir para login</a></p>
+    </div>
+
+{% endblock %}

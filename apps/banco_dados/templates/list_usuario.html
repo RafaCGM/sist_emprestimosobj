@@ -1,6 +1,6 @@
 {% extends "base/master.html" %}
 {% load static %}
-{% block title %} Usuarios {% endblock %}
+{% block title %} Usuários {% endblock %}
 
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
@@ -8,10 +8,9 @@
 <div class="bloco">
     <h1> Usuarios </h1>
     <br>
-    <p><a href="{% url 'cad_categoria' %}"> CADASTRAR </a></p>
+    <p><a href="{% url 'registro' %}"> CADASTRAR </a></p>
     <br>
     {% for x in usuario %}       
-
 
             <p><strong>Nome:</strong> {{x.nome}}</p>
 

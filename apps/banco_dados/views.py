@@ -5,6 +5,38 @@ from .forms import *
 
 '''
 
+============= USUARIOS/AUTENTICAÇÃO =============
+
+'''
+
+def view_login(request):
+    return render(request, 'registration/login.html')
+
+def view_registro(request):
+
+    form = RegistroForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect(list_usuario)
+
+    context = {
+        'form_registro': form
+    }
+    return render(request, 'registration/registro.html', context)
+
+def list_usuario(request):
+    allU = Usuario.objects.all()
+    context = {
+        'usuario': allU
+    }
+
+    return render(request, 'list_usuario.html', context)
+
+
+
+'''
+
 ============= CATEGORIAS =============
 
 '''
@@ -31,32 +63,8 @@ def list_categoria(request):
 
     return render(request, 'list_categorias.html', context)
 
-'''
 
-============= USUARIOS =============
 
-'''
-
-def cad_usuario(request):
-
-    form = UsuarioForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return redirect(list_usuario)
-
-    context = {
-        'form_usuario': form
-    }
-    return render(request, 'cad_usuario.html', context)
-
-def list_usuario(request):
-    allU = Usuario.objects.all()
-    context = {
-        'usuario': allU
-    }
-
-    return render(request, 'list_usuario.html', context)
 '''
 
 ============= OBJETOS =============
