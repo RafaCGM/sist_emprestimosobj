@@ -1,0 +1,34 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} Objetos {% endblock %}
+
+{% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
+
+<div class="bloco">
+    <h1> Objetos </h1>
+    <br>
+    <p><a href="{% url 'cad_objeto' %}"> CADASTRAR </a></p>
+    <br>
+    {% for objeto in obj %}       
+        <p>
+            <strong>Nome:</strong> {{objeto.nome}} <br>
+            <strong>Categoria:</strong> {{objeto.categoria}} <br>
+            <strong>Data de Cadastro:</strong> {{objeto.dataCadastro}} <br>
+            <strong>Descrição:</strong> {{objeto.descricao}}
+            | <a href="{% url 'edit_objeto' objeto.id %}"> EDITAR </a>
+            | <a href="{% url 'remove_objeto' objeto.id %}"> REMOVER </a>
+        </p>
+        <br>
+        
+        {% empty %}
+
+        <p>Não há nenhum cadastro</p>
+        
+    {% endfor %}
+    <br>
+    <br>
+    <p><a href="{% url 'home' %}">Voltar</a></p>
+</div>
+
+{% endblock %}

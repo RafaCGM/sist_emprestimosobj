@@ -18,7 +18,7 @@ def view_registro(request):
 
     if form.is_valid():
         form.save()
-        return redirect(list_usuario)
+        return redirect(view_login)
 
     context = {
         'form_registro': form
@@ -31,7 +31,7 @@ def list_usuario(request):
         'usuario': allU
     }
 
-    return render(request, 'list_usuario.html', context)
+    return render(request, 'list_usuarios.html', context)
 
 def editar_registro(request, matricula):
     registro = Usuario.objects.get(pk=matricula)
@@ -87,7 +87,44 @@ def list_categoria(request):
 
 '''
 
+def cad_objeto(request):
+    form = ObjetoForm(request.POST or None)
 
+    if form.is_valid():
+        form.save()
+        return redirect(list_objeto)
+
+    context = {
+        'form_objeto': form
+    }
+
+    return render(request, 'cad_objeto.html', context)
+
+def list_objeto(request):
+    allC = Objeto.objects.all()
+    context = {
+        'obj': allC
+    }
+
+    return render(request, 'list_objetos.html', context)
+
+def editar_objeto(request, id):
+    editarObjeto = Objeto.objects.get(pk=id)
+    form = ObjetoForm(request.POST or None, instance=editarObjeto)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_objeto')
+    
+    context = {
+        'form_objeto': form
+    }
+    return render(request, 'cad_objeto.html', context)
+
+def remover_objeto(request, id):
+    objeto = Objeto.objects.get(pk=id)
+    objeto.delete()
+    return redirect('list_objeto')
 
 
 
@@ -97,8 +134,45 @@ def list_categoria(request):
 
 '''
 
+def cad_emprestimo(request):
+    form = EmprestimoForm(request.POST or None)
 
+    if form.is_valid():
+        form.save()
+        return redirect(list_emprestimo)
 
+    context = {
+        'form_emprestimo': form
+    }
+
+    return render(request, 'cad_emprestimo.html', context)
+
+def list_emprestimo(request):
+    allC = Emprestimo.objects.all()
+
+    context = {
+        'emp': allC
+    }
+
+    return render(request, 'list_emprestimos.html', context)
+
+def editar_emprestimo(request, id):
+    editarEmprestimo = Emprestimo.objects.get(pk=id)
+    form = EmprestimoForm(request.POST or None, instance=editarEmprestimo)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_emprestimo')
+    
+    context = {
+        'form_emprestimo': form
+    }
+    return render(request, 'cad_emprestimo.html', context)
+
+def remover_emprestimo(request, id):
+    emprestimo = Emprestimo.objects.get(pk=id)
+    emprestimo.delete()
+    return redirect('list_emprestimo')
 
 
 

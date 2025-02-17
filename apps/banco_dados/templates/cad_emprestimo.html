@@ -1,15 +1,15 @@
 {% extends "base/master.html" %}
 {% load static %}
-{% block title %} Cadastrar categoria {% endblock %}
+{% block title %} Cadastrar empréstimo {% endblock %}
 
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
 
 <div class="bloco">
-    <h1> CADASTRAR CATEGORIA </h1>
+    <h1> CADASTRAR EMPRÉSTIMO </h1>
     <form method="post">
         {% csrf_token %}
-        {{ form_categoria }}
+        {{ form_emprestimo }}
 
         <p><input type="submit" value="Cadastrar"></p>
     </form>

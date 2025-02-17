@@ -1,3 +1,4 @@
+from django import forms
 from django.forms import ModelForm
 from django.forms import ModelChoiceField
 from .models import *
@@ -12,3 +13,15 @@ class CategoriaForm(ModelForm):
     class Meta:
         model = Categoria
         fields = ['nome','descricao']
+
+class ObjetoForm(ModelForm):
+    class Meta:
+        model = Objeto
+        fields = ['nome','descricao','categoria']
+
+class EmprestimoForm(ModelForm):
+    class Meta:
+        model = Emprestimo
+        fields = ['usuario','objeto','dataEmprestimo','dataDevolucao']
+
+    dataDevolucao = forms.DateTimeField(required=False) 

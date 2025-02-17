@@ -1,0 +1,35 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} Empréstimos {% endblock %}
+
+{% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
+
+<div class="bloco">
+    <h1> Empréstimos </h1>
+    <br>
+    <p><a href="{% url 'cad_emprestimo' %}"> CADASTRAR </a></p>
+    <br>
+    {% for emprestimo in emp %}       
+        <p>
+            <strong>Nome do responsável</strong> {{emprestimo.usuario}} <br>
+            <strong>Objeto emprestado:</strong> {{emprestimo.objeto}} <br>
+            <strong>Data do emprestimo:</strong> {{emprestimo.dataEmprestimo}} <br>
+            <strong>Data de devolução:</strong> {{emprestimo.dataDevolucao}} 
+            | <a href="{% url 'edit_emprestimo' emprestimo.id %}"> EDITAR </a>
+            | <a href="{% url 'remove_emprestimo' emprestimo.id %}"> REMOVER </a>]
+
+        </p>
+        <br>
+        
+        {% empty %}
+
+        <p>Não há nenhum cadastro</p>
+        
+    {% endfor %}
+    <br>
+    <br>
+    <p><a href="{% url 'home' %}">Voltar</a></p>
+</div>
+
+{% endblock %}
