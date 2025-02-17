@@ -5,23 +5,66 @@
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/registro.css' %}">
 
-    <div class="container">
-        <h1> Página de cadastro </h1>
+<div class="form_container">
+    <h1 class="text-center">Página de Cadastro</h1>
 
-        <form method="POST">
-            {% csrf_token %}
-            
-            <p>Matricula: {{ form_registro.matricula }}</p>
-            <p>Nome Completo: {{ form_registro.nome }}</p>
-            <p>Usuário: {{ form_registro.username }}</p>
-            <p>Telefone: {{ form_registro.telefone }}</p>
-            <p>E-mail: {{ form_registro.email }}</p>
-            <p>Senha: {{ form_registro.password1 }}</p>
-            <p>Repetir Senha: {{ form_registro.password2 }}</p>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Matrícula -->
+        <div class="form_input">
+            <label for="id_matricula" class="sr-only">Matrícula:</label>
+            <input type="text" name="matricula" id="id_matricula" class="input" placeholder="Matrícula" required>
+        </div>
 
-            <p><input type="submit" value="Cadastrar"></p>
-        </form>
-        <p><a href="{% url 'login' %}">Ir para login</a></p>
+        <!-- Nome Completo -->
+        <div class="form_input">
+            <label for="id_nome" class="sr-only">Nome Completo:</label>
+            <input type="text" name="nome" id="id_nome" class="input" placeholder="Nome Completo" required>
+        </div>
+
+        <!-- Usuário -->
+        <div class="form_input">
+            <label for="id_username" class="sr-only">Usuário:</label>
+            <input type="text" name="username" id="id_username" class="input" placeholder="Usuário" required>
+        </div>
+
+        <!-- Telefone -->
+        <div class="form_input">
+            <label for="id_telefone" class="sr-only">Telefone:</label>
+            <input type="text" name="telefone" id="id_telefone" class="input" placeholder="Telefone" required>
+        </div>
+
+        <!-- E-mail -->
+        <div class="form_input">
+            <label for="id_email" class="sr-only">E-mail:</label>
+            <input type="email" name="email" id="id_email" class="input" placeholder="E-mail" required>
+        </div>
+
+        <!-- Senha -->
+        <div class="form_input">
+            <label for="id_password1" class="sr-only">Senha:</label>
+            <input type="password" name="password1" id="id_password1" class="input" placeholder="Senha" required>
+        </div>
+
+        <!-- Repetir Senha -->
+        <div class="form_input">
+            <label for="id_password2" class="sr-only">Repetir Senha:</label>
+            <input type="password" name="password2" id="id_password2" class="input" placeholder="Repetir Senha" required>
+        </div>
+
+        <!-- Botão de Envio -->
+        <div class="form_botao">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+    </form>
+
+    <!-- Link para a página de login -->
+    <div class="form_link text-center">
+        <p>Já tem uma conta? <a href="{% url 'login' %}">Ir para login</a></p>
     </div>
+</div>
+
+
 
 {% endblock %}

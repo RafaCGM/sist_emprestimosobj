@@ -1,8 +1,4 @@
-.container {
-    text-align: center;
-}
-
-/* KKKKKKKKKKKKKKKKKKK O CARA SE ESQUECEU DO CSS */
+/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -10,4 +6,98 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
+
+/* Container do formulário */
+.form_container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.form_container h2 {
+    font-size: 1.5rem;
+}
+
+/* Estilo do título */
+.text-center {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilização das entradas do formulário */
+.form_input {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    color: #333;
+}
+
+/* Estilo do placeholder */
+.input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Cor quando o campo está em foco */
+.input:focus {
+    border-color: rgb(113, 216, 113); /* Cor quando o campo está em foco */
+}
+
+/* Estilização do botão de cadastro */
+.form_botao {
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(113, 216, 113);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: rgb(95, 184, 95);
+}
+
+/* Estilo do link de login */
+.form_link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form_link a {
+    text-decoration: none;
+    color: rgb(113, 216, 113);
+    font-size: 14px;
+}
+
+.form_link a:hover {
+    text-decoration: underline;
+}
+
