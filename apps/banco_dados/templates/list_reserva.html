@@ -1,0 +1,22 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} Reserva {% endblock %}
+
+{% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
+
+<div class="bloco">
+    <h1> Reserva </h1>
+    <br>
+    
+    <p><a href="{% url 'cad_emprestimos' %}"> CADASTRAR </a></p>
+    <br>
+
+    <p><a href="{% url 'home' %}">Voltar</a></p>
+</div>
+
+
+
+
+
+{% endblock %}

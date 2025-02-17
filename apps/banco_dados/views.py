@@ -79,6 +79,24 @@ def list_categoria(request):
 
     return render(request, 'list_categorias.html', context)
 
+def editar_categoria(request, id):
+    catg = Categoria.objects.get(pk=id)
+    form = CategoriaForm(request.POST or None, instance=catg)
+
+    if form.is_valid():
+        form.save()
+        return redirect('categorias')
+    
+    context = {
+        'form_categoria': form
+    }
+    return render(request, 'cad_categoria.html', context)
+
+def remover_categoria(request, id):
+    categoria = Categoria.objects.get(pk=id)
+    categoria.delete()
+    return redirect('list_categoria')
+
 
 
 '''
@@ -175,9 +193,14 @@ def remover_emprestimo(request, id):
     return redirect('list_emprestimo')
 
 
-
 '''
 
 ============= RESERVA =============
 
 '''
+
+def cad_reserva(request):
+    return render(request, 'cad_reserva.html')
+
+def list_reserva(request):
+    return render(request, 'list_reserva.html')

@@ -12,9 +12,10 @@
     <br>
     {% for categoria in catg %}       
         <p>
-            <strong>Nome:</strong> {{categoria.nome}}
-            | <a href=""> EDITAR </a>
-            | <a href=""> REMOVER </a>
+            <p><strong>Nome:</strong> {{categoria.nome}}</p>
+            <p><strong>Descrição:</strong> {{categoria.descricao}}</p>
+            | <a href="{% url 'edit_categoria' categoria.id  %}"> EDITAR </a>
+            | <a href="{% url 'remove_categoria' categoria.id %}"> REMOVER </a>
         </p>
         <br>
         
@@ -25,7 +26,7 @@
     {% endfor %}
     <br>
     <br>
-    <p><a href="{% url 'home' %}">Voltar</a></p>
+    <p><a href="{% url 'home' %}">HOME</a></p>
 </div>
 
 {% endblock %}

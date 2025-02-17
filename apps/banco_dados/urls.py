@@ -15,6 +15,8 @@ urlpatterns = [
     # CATEGORIA
     path('cad_categoria/', cad_categoria, name='cad_categoria'),
     path('categorias/', list_categoria, name='list_categoria'),
+    path('editar_categoria/<int:id>/', editar_categoria, name='edit_categoria'),
+    path('remover_categoria/<int:id>/', remover_categoria, name='remove_categoria'),
 
     # OBJETO
     path('cad_objeto/', cad_objeto, name='cad_objeto'),
@@ -30,5 +32,6 @@ urlpatterns = [
 
     # RESERVA
     
-
+    path('reservas/', list_reserva, name='list_reserva'),
+    
 ]
