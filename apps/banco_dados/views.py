@@ -200,7 +200,24 @@ def remover_emprestimo(request, id):
 '''
 
 def cad_reserva(request):
-    return render(request, 'cad_reserva.html')
+    form = ReservaForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect(list_reserva)
+
+    context = {
+        'form_reserva': form
+    }
+    return render(request, 'cad_reserva.html', context)
+
 
 def list_reserva(request):
-    return render(request, 'list_reserva.html')
+
+    allR = Reserva.objects.all()
+
+    context = {
+        'resv': allR
+    }
+
+    return render(request, 'list_reserva.html', context)

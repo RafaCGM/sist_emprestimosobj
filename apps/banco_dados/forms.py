@@ -24,3 +24,9 @@ class EmprestimoForm(ModelForm):
         fields = ['usuario','objeto','dataEmprestimo','dataDevolucao']
 
     dataDevolucao = forms.DateTimeField(required=False) 
+
+
+class ReservaForm(ModelForm):
+    class Meta:
+        model = Reserva
+        fields = ['usuario', 'objeto', 'dataReserva', 'dataAtendimento']

@@ -32,6 +32,6 @@ urlpatterns = [
 
     # RESERVA
     
+    path('cad_reserva/', cad_reserva, name='cad_reserva'),
     path('reservas/', list_reserva, name='list_reserva'),
-    
 ]

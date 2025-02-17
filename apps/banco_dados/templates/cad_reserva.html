@@ -5,5 +5,18 @@
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
 
+<div class="bloco">
+
+
+        <h1> CADASTRAR RESERVA </h1>
+    
+        <form method="post">
+            {% csrf_token %}
+            {{ form_reserva }}
+            <p><input type="submit" value="Cadastrar"></p>
+        </form>
+
+</div>
+
 
 {% endblock %}

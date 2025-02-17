@@ -9,8 +9,27 @@
     <h1> Reserva </h1>
     <br>
     
-    <p><a href="{% url 'cad_emprestimos' %}"> CADASTRAR </a></p>
+    <p><a href="{% url 'cad_reserva' %}"> CADASTRAR </a></p>
     <br>
+
+    {% for x in resv %}       
+
+            <p>
+                <strong>Nome:</strong> {{x.usuario}}
+                | <a href=""> EDITAR </a>
+                | <a href=""> REMOVER </a>
+            </p>
+            <p><strong>Matricula:</strong> {{x.objeto}}</p>
+            <p><strong>Telefone:</strong> {{x.dataReserva}}</p>
+            <strong>Email:</strong> {{x.dataAtendimento}}
+
+        <br>
+            <p>------------------------------------</p>
+        {% empty %}
+
+        <p>Não há nenhum cadastro de usuario</p>
+        
+    {% endfor %}
 
     <p><a href="{% url 'home' %}">Voltar</a></p>
 </div>
