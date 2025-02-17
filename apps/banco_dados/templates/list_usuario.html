@@ -12,18 +12,17 @@
     <br>
     {% for x in usuario %}       
 
-            <p><strong>Nome:</strong> {{x.nome}}</p>
-
+            <p>
+                <strong>Nome:</strong> {{x.nome}}
+                | <a href="{% url 'edit' x.matricula %}"> EDITAR </a>
+                | <a href="{% url 'remove' x.matricula %}"> REMOVER </a>
+            </p>
             <p><strong>Matricula:</strong> {{x.matricula}}</p>
-
             <p><strong>Telefone:</strong> {{x.telefone}}</p>
-
             <strong>Email:</strong> {{x.email}}
-            | <a href=""> EDITAR </a>
-            | <a href=""> REMOVER </a>
 
         <br>
-
+            <p>------------------------------------</p>
         {% empty %}
 
         <p>Não há nenhum cadastro de usuario</p>
@@ -31,7 +30,7 @@
     {% endfor %}
     <br>
     <br>
-    <p><a href="{% url 'home' %}">Voltar para página inicial</a></p>
+    <p><a href="{% url 'home' %}">home</a></p>
 </div>
 
 {% endblock %}

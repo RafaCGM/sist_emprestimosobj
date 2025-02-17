@@ -33,7 +33,23 @@ def list_usuario(request):
 
     return render(request, 'list_usuario.html', context)
 
+def editar_registro(request, matricula):
+    registro = Usuario.objects.get(pk=matricula)
+    form = RegistroForm(request.POST or None, instance=registro)
 
+    if form.is_valid():
+        form.save()
+        return redirect('list_usuario')
+    
+    context = {
+        'form_registro': form
+    }
+    return render(request, 'registration/registro.html', context)
+
+def remover_registro(request, matricula):
+    user = Usuario.objects.get(pk=matricula)
+    user.delete()
+    return redirect('list_usuario')
 
 '''
 
