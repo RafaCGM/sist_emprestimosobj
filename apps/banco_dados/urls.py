@@ -10,8 +10,6 @@ urlpatterns = [
     path('editar_usuario/<int:matricula>/', editar_registro, name='edit'),
     path('remover_usuario/<int:matricula>/', remover_registro, name='remove'),
 
-
-
     # CATEGORIA
     path('cad_categoria/', cad_categoria, name='cad_categoria'),
     path('categorias/', list_categoria, name='list_categoria'),
