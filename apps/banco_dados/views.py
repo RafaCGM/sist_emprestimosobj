@@ -85,7 +85,7 @@ def editar_categoria(request, id):
 
     if form.is_valid():
         form.save()
-        return redirect('categorias')
+        return redirect('list_categoria')
     
     context = {
         'form_categoria': form
