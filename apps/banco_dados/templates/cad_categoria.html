@@ -1,6 +1,6 @@
 {% extends "base/master.html" %}
 {% load static %}
-{% block title %} Cadastrar Categoria {% endblock %}
+{% block title %} Cadastrar categoria {% endblock %}
 
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
@@ -12,8 +12,11 @@
         {% csrf_token %}
         <strong><p>Nome:</strong> {{ form_categoria.nome }}</p>
         <strong><p>Descrição:</strong> {{ form_categoria.descricao }}</p>
+
         <p><input type="submit" value="Cadastrar"></p>
     </form>
+
+    <p><a href="{% url 'list_categoria' %}">Voltar</a></p>
 </div>
 
 

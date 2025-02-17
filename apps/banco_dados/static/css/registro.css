@@ -92,8 +92,14 @@ label {
     text-decoration: none;
     color: rgb(113, 216, 113);
     font-size: 12px;  /* Tamanho de fonte menor para o link */
+    font-weight: bold;
 }
 
 .form_link a:hover {
     text-decoration: underline;
+}
+
+.form_link span {
+    font-size: 14px;
+    color: #555;
 }

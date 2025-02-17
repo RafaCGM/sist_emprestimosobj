@@ -7,6 +7,7 @@
 
 <div class="bloco">
     <h1> CADASTRAR OBJETO </h1>
+
     <form method="post">
         {% csrf_token %}
 
@@ -14,6 +15,8 @@
 
         <p><input type="submit" value="Cadastrar"></p>
     </form>
+
+    <p><a href="{% url 'list_objeto' %}">Voltar</a></p>
 </div>
 
 

@@ -1,21 +1,22 @@
 {% extends "base/master.html" %}
 {% load static %}
-{% block title %} Cadastrar Categoria {% endblock %}
+{% block title %} Cadastrar reserva {% endblock %}
 
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
 
 <div class="bloco">
+    <h1> CADASTRAR RESERVA </h1>
 
+    <form method="post">
+        {% csrf_token %}
 
-        <h1> CADASTRAR RESERVA </h1>
-    
-        <form method="post">
-            {% csrf_token %}
-            {{ form_reserva }}
-            <p><input type="submit" value="Cadastrar"></p>
-        </form>
+        {{ form_reserva }}
 
+        <p><input type="submit" value="Cadastrar"></p>
+    </form>
+
+    <p><a href="{% url 'list_reserva' %}">Voltar</a></p>
 </div>
 
 
