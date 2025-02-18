@@ -45,13 +45,11 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    
 }
 
 label {
     margin-bottom: 0.5rem;
 }
-
 
 /* Estilo das entradas de texto */
 .input, .form_input input {

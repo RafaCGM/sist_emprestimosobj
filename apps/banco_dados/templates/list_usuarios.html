@@ -5,32 +5,32 @@
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
 
-<div class="bloco">
-    <h1> Usuarios </h1>
-    <br>
-    <p><a href="{% url 'registro' %}"> CADASTRAR </a></p>
-    <br>
-    {% for x in usuario %}       
+<div class="crud-container">
+    
+    <div class="crud-cadastrar">
+        <h2>Usuários</h2>
+        <a href="{% url 'registro' %}" class="btn cadastrar-btn">Cadastrar</a>
+    </div>
 
-            <p>
-                <strong>Nome:</strong> {{x.nome}}
-                | <a href="{% url 'edit' x.matricula %}"> EDITAR </a>
-                | <a href="{% url 'remove' x.matricula %}"> REMOVER </a>
-            </p>
-            <p><strong>Matricula:</strong> {{x.matricula}}</p>
-            <p><strong>Telefone:</strong> {{x.telefone}}</p>
-            <strong>Email:</strong> {{x.email}}
+    <div class="crud-data">
+        {% for x in usuario %}
+            <div class="crud-usuario">
+                <p class="crud-nome"><strong>Nome: </strong> {{ x.nome }}</p>
 
-        <br>
-            <p>------------------------------------</p>
+                <div class="crud-operacao">
+                    <a href="{% url 'edit' x.matricula %}" class="btn editar-btn">Editar</a>
+                    <a href="{% url 'remove' x.matricula %}" class="btn remover-btn">Remover</a>
+                </div>
+            </div>
         {% empty %}
+            <p class="no-data">Não há nenhum cadastro de usuário.</p>
+        {% endfor %}
+    </div>
 
-        <p>Não há nenhum cadastro de usuario</p>
-        
-    {% endfor %}
-
-    <p><a href="{% url 'home' %}">Voltar a página inicial</a></p>
-
+    <div class="crud-voltar">
+        <a href="{% url 'home' %}" class="btn voltar-btn">Voltar à página inicial</a>
+    </div>
 </div>
 
 {% endblock %}
+

@@ -5,28 +5,33 @@
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
 
-<div class="bloco">
-    <h1> Categorias </h1>
-    <br>
-    <p><a href="{% url 'cad_categoria' %}"> CADASTRAR </a></p>
-    <br>
-    {% for categoria in catg %}       
-        <p>
-            <p><strong>Nome:</strong> {{categoria.nome}}</p>
-            <p><strong>Descrição:</strong> {{categoria.descricao}}</p>
-            | <a href="{% url 'edit_categoria' categoria.id  %}"> EDITAR </a>
-            | <a href="{% url 'remove_categoria' categoria.id %}"> REMOVER </a>
-        </p>
-        <br>
-        
-        {% empty %}
+<div class="crud-container">
+    
+    <div class="crud-cadastrar">
+        <h2>Categorias</h2>
+        <a href="{% url 'cad_categoria' %}" class="btn cadastrar-btn">Cadastrar</a>
+    </div>
 
-        <p>Não há nenhum cadastro</p>
-        
-    {% endfor %}
-    <br>
-    <br>
-    <p><a href="{% url 'home' %}">Voltar a página inicial</a></p>
+    <div class="crud-data">
+        {% for categoria in catg %} 
+            <div class="crud-usuario">
+                <p class="crud-nome"><strong>Nome: </strong> {{categoria.nome}}</p>
+                <p class="crud-nome"><strong>Descrição: </strong> {{categoria.descricao}}</p>
+            
+                <div class="crud-operacao">
+                    <a href="{% url 'edit_categoria' categoria.id  %}" class="btn editar-btn">Editar</a>
+                    <a href="{% url 'remove_categoria' categoria.id %}" class="btn remover-btn">Remover</a>
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-data">Não há nenhum cadastro de usuário.</p>
+        {% endfor %}
+    </div>
+
+    <div class="crud-voltar">
+        <a href="{% url 'home' %}" class="btn voltar-btn">Voltar à página inicial</a>
+    </div>
 </div>
 
 {% endblock %}
+

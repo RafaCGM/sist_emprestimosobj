@@ -5,31 +5,35 @@
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
 
-<div class="bloco">
-    <h1> Empréstimos </h1>
-    <br>
-    <p><a href="{% url 'cad_emprestimo' %}"> CADASTRAR </a></p>
-    <br>
-    {% for emprestimo in emp %}       
-        <p>
-            <strong>Nome do responsável</strong> {{emprestimo.usuario}} <br>
-            <strong>Objeto emprestado:</strong> {{emprestimo.objeto}} <br>
-            <strong>Data do emprestimo:</strong> {{emprestimo.dataEmprestimo}} <br>
-            <strong>Data de devolução:</strong> {{emprestimo.dataDevolucao}} 
-            | <a href="{% url 'edit_emprestimo' emprestimo.id %}"> EDITAR </a>
-            | <a href="{% url 'remove_emprestimo' emprestimo.id %}"> REMOVER </a>]
+<div class="crud-container">
+    
+    <div class="crud-cadastrar">
+        <h2>Empréstimos</h2>
+        <a href="{% url 'cad_emprestimo' %}" class="btn cadastrar-btn">Cadastrar</a>
+    </div>
 
-        </p>
-        <br>
-        
+    <div class="crud-data">
+        {% for emprestimo in emp %}  
+            <div class="crud-usuario">
+                <p class="crud-nome"><strong>Usuario: </strong> {{emprestimo.usuario}}</p>
+                <p class="crud-nome"><strong>Objeto: </strong> {{emprestimo.objeto}}</p>
+                <p class="crud-nome"><strong>Data do Empréstimo: </strong> {{emprestimo.dataEmprestimo}}</p>
+                <p class="crud-nome"><strong>Data da Devolução: </strong> {{emprestimo.dataDevolucao}} </p>
+            
+                <div class="crud-operacao">
+                    <a href="{% url 'edit_emprestimo' emprestimo.id %}" class="btn editar-btn">Editar</a>
+                    <a href="{% url 'remove_emprestimo' emprestimo.id %}" class="btn remover-btn">Remover</a>
+                </div>
+            </div>
         {% empty %}
+            <p class="no-data">Não há nenhum cadastro de usuário.</p>
+        {% endfor %}
+    </div>
 
-        <p>Não há nenhum cadastro</p>
-        
-    {% endfor %}
-    <br>
-    <br>
-    <p><a href="{% url 'home' %}">Voltar a página inicial</a></p>
+    <div class="crud-voltar">
+        <a href="{% url 'home' %}" class="btn voltar-btn">Voltar à página inicial</a>
+    </div>
 </div>
 
 {% endblock %}
+
