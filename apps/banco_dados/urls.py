@@ -5,6 +5,7 @@ urlpatterns = [
 
     # USUARIO/AUTENTICAÇÃO
     path('login/', view_login, name='login'),
+    path('logout/', view_deslogar, name='logout'),
     path('registro/', view_registro, name='registro'),
     path('usuarios/', list_usuario, name='list_usuario'),
     path('editar_usuario/<int:matricula>/', editar_registro, name='edit'),

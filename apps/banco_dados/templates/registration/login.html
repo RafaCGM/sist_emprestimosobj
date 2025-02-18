@@ -9,17 +9,23 @@
     <div class="form login">
         <div class="form-content">
             <h2>Login</h2>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
 
             <form action="" method="">
 
-                <!-- Matrícula -->
+                <!-- E-mail -->
                 <div class="form_input">
-                    <input type="text" placeholder="Matricula" class="input">
+                    <input type="text" name="email" placeholder="E-mail" class="input">
                 </div>
 
                 <!-- Password -->
                 <div class="form_input">
-                    <input type="password" placeholder="Senha" class="input">
+                    <input type="password" name="password" placeholder="Senha" class="input">
                 </div>
 
                 <div class="form_link">
@@ -33,13 +39,11 @@
                 <div class="form_link">
                     <span>Não possui uma conta? <a href="{% url 'registro' %}">Cadastrar</a></span>
                 </div>
-                
+
             </form>
+
         </div>
     </div>
 </section>
 
 {% endblock %}
-
-
-<!--  <p><a href="{% url 'cadastro' %}">Ir para cadastro</a></p> -->

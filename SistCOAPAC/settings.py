@@ -128,6 +128,6 @@ AUTH_USER_MODEL = 'banco_dados.Usuario'
 
 # Variáveis de Login
 
-# LOGIN_URL = 'view_login'
+LOGIN_URL = 'login'
 
-# LOGIN_REDIRECT = 'view_perfil'
+LOGIN_REDIRECT = 'home'
