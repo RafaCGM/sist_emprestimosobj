@@ -32,4 +32,7 @@ urlpatterns = [
     
     path('cad_reserva/', cad_reserva, name='cad_reserva'),
     path('reservas/', list_reserva, name='list_reserva'),
+    path('editar_reserva/<int:id>/', editar_reserva, name='edit_reserva'),
+    path('remove_reserva/<int:id>/', remover_reserva, name='remove_reserva')
+
 ]
