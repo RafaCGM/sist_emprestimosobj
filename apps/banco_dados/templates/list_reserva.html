@@ -12,16 +12,16 @@
     <p><a href="{% url 'cad_reserva' %}"> CADASTRAR </a></p>
     <br>
 
-    {% for x in resv %}       
+    {% for reserva in resv %}       
 
             <p>
-                <strong>Nome:</strong> {{x.usuario}}
-                | <a href=""> EDITAR </a>
-                | <a href=""> REMOVER </a>
+                <strong>Nome:</strong> {{reserva.usuario}}
+                | <a href="{% url 'edit_reserva' reserva.id %}"> EDITAR </a>
+                | <a href="{% url 'remove_reserva' reserva.id %}"> REMOVER </a>
             </p>
-            <p><strong>Matricula:</strong> {{x.objeto}}</p>
-            <p><strong>Telefone:</strong> {{x.dataReserva}}</p>
-            <strong>Email:</strong> {{x.dataAtendimento}}
+            <p><strong>Matricula:</strong> {{reserva.objeto}}</p>
+            <p><strong>Telefone:</strong> {{reserva.dataReserva}}</p>
+            <strong>Email:</strong> {{reserva.dataAtendimento}}
 
         <br>
             <p>------------------------------------</p>

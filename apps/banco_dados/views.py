@@ -98,7 +98,6 @@ def remover_categoria(request, id):
     return redirect('list_categoria')
 
 
-
 '''
 
 ============= OBJETOS =============
@@ -221,3 +220,22 @@ def list_reserva(request):
     }
 
     return render(request, 'list_reserva.html', context)
+
+
+def editar_reserva(request, id):
+    editarReserva = Reserva.objects.get(pk=id)
+    form = ReservaForm(request.POST or None, instance=editarReserva)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_reserva')
+    
+    context = {
+        'form_reserva': form
+    }
+    return render(request, 'cad_reserva.html', context)
+
+def remover_reserva(request, id):
+    reserva = Reserva.objects.get(pk=id)
+    reserva.delete()
+    return redirect('list_reserva')

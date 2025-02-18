@@ -25,7 +25,6 @@ class EmprestimoForm(ModelForm):
 
     dataDevolucao = forms.DateTimeField(required=False) 
 
-
 class ReservaForm(ModelForm):
     class Meta:
         model = Reserva
