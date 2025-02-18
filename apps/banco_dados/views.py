@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+
 # Create your views here.
 
 '''
@@ -10,7 +14,25 @@ from .forms import *
 '''
 
 def view_login(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, email=email, password=password)
+    
+        if user is not None:
+                login(request, user)
+                return redirect('home')
+        else:
+                messages.error(request, "Usuário ou senha incorretos.")
+    
+    else:
+        return render(request, "registration/login.html")
+
     return render(request, 'registration/login.html')
+
+def view_deslogar(request):
+    logout(request)
+    return redirect("login")
 
 def view_registro(request):
 
