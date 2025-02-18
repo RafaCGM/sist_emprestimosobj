@@ -11,46 +11,52 @@
     <form method="POST">
         {% csrf_token %}
         
-        <!-- Matrícula -->
+        <!-- Matrícula + Nome Completo -->
         <div class="form_input">
-            <label for="id_matricula">Matrícula</label>
-            {{ form_registro.matricula }}
+            <div class="form_field">  
+                <label for="id_matricula">Matrícula</label>
+                {{ form_registro.matricula }}
+            </div>
+            <div class="form_field">
+                <label for="id_nome">Nome Completo</label>
+                {{ form_registro.nome }}
+            </div>
         </div>
     
-        <!-- Nome Completo -->
+        <!-- Usuário + Telefone -->
         <div class="form_input">
-            <label for="id_nome">Nome Completo</label>
-            {{ form_registro.nome }}
+            <div class="form_field">
+                <label for="id_username">Usuário</label>
+                {{ form_registro.username }}
+            </div>
+            <div class="form_field">
+                <label for="id_telefone">Telefone</label>
+                {{ form_registro.telefone }}
+            </div>
         </div>
-    
-        <!-- Usuário -->
-        <div class="form_input">
-            <label for="id_username">Usuário</label>
-            {{ form_registro.username }}
-        </div>
-    
-        <!-- Telefone -->
-        <div class="form_input">
-            <label for="id_telefone">Telefone</label>
-            {{ form_registro.telefone }}
-        </div>
-    
+
         <!-- E-mail -->
         <div class="form_input">
-            <label for="id_email">E-mail</label>
-            {{ form_registro.email }}
+            <div class="form_field2">
+                <label for="id_email">E-mail</label>
+                {{ form_registro.email }}
+            </div>     
         </div>
     
         <!-- Senha -->
         <div class="form_input">
-            <label for="id_password1">Senha</label>
-            {{ form_registro.password1 }}
+            <div class="form_field2">
+                <label for="id_password1">Senha</label>
+                {{ form_registro.password1 }}
+            </div>
         </div>
     
         <!-- Repetir Senha -->
         <div class="form_input">
-            <label for="id_password2">Repetir Senha</label>
-            {{ form_registro.password2 }}
+            <div class="form_field2">
+                <label for="id_password2">Repetir Senha</label>
+                {{ form_registro.password2 }}
+            </div>
         </div>
     
         <!-- Botão de Envio -->
@@ -63,5 +69,6 @@
         </div>
     </form>
 </div>
+
 
 {% endblock %}

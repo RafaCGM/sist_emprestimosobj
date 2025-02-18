@@ -12,37 +12,52 @@ body {
 /* Container do formulário */
 .form_container {
     background-color: #fff;
-    padding: 20px;  /* Reduzido o padding para diminuir o espaço */
+    padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;  /* Reduzido a largura máxima para um formulário mais compacto */
+    max-width: 600px;  /* Tamanho do formulário */
 }
 
 /* Estilo do título */
 .text-center {
     text-align: center;
     color: #333;
-    margin-bottom: 15px;  /* Menos espaço abaixo do título */
+    padding-bottom: 2rem;
 }
 
 /* Estilização das entradas do formulário */
 .form_input {
-    margin-bottom: 15px;  /* Menos espaço entre os campos */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os campos se ajustem na linha */
+    gap: 20px;  /* Espaço entre os campos */
+    margin-bottom: 1rem;
+}
+
+.form_field {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 10px); /* Metade da largura com espaço entre os campos */
+    margin-bottom: 1rem;
+}
+
+.form_field2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
 }
 
 label {
-    font-size: 14px;  /* Tamanho da fonte reduzido */
-    color: #555;
-    margin-bottom: 6px;  /* Menos espaço abaixo dos labels */
-    display: block;
+    margin-bottom: 0.5rem;
 }
+
 
 /* Estilo das entradas de texto */
 .input, .form_input input {
     width: 100%;
-    padding: 10px;  /* Menos padding para campos de entrada */
-    font-size: 14px;  /* Menor tamanho de fonte */
+    padding: 10px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
@@ -50,15 +65,9 @@ label {
     color: #333;
 }
 
-/* Estilo do placeholder */
-.input::placeholder {
-    color: #aaa;
-    font-style: italic;
-}
-
 /* Cor quando o campo está em foco */
 .input:focus {
-    border-color: rgb(113, 216, 113); /* Cor quando o campo está em foco */
+    border-color: rgb(113, 216, 113);
 }
 
 /* Estilização do botão de cadastro */
@@ -68,12 +77,12 @@ label {
 
 .btn {
     width: 100%;
-    padding: 10px;  /* Menor altura para o botão */
+    padding: 10px;
     background-color: rgb(113, 216, 113);
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 14px;  /* Menor tamanho de fonte */
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -85,13 +94,13 @@ label {
 /* Estilo do link de login */
 .form_link {
     text-align: center;
-    margin-top: 15px;  /* Menos espaço no link */
+    margin-top: 15px;
 }
 
 .form_link a {
     text-decoration: none;
     color: rgb(113, 216, 113);
-    font-size: 12px;  /* Tamanho de fonte menor para o link */
+    font-size: 12px;
     font-weight: bold;
 }
 
