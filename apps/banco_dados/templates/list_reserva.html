@@ -15,10 +15,12 @@
     <div class="crud-data">
         {% for reserva in resv %} 
             <div class="crud-usuario">
-                <p class="crud-nome"><strong>Usuario: </strong> {{reserva.usuario}}</p>
-                <p class="crud-nome"><strong>Objeto: </strong> {{reserva.objeto}}</p>
-                <p class="crud-nome"><strong>Data da Reserva: </strong> {{reserva.dataReserva}}</p>
-                <p class="crud-nome"><strong>Data do Atendimento: </strong> {{reserva.dataAtendimento}}</p>
+                <div class="crud-texto">
+                    <p class="crud-nome"><strong>Usuario: </strong> {{reserva.usuario}}</p>
+                    <p class="crud-nome"><strong>Objeto: </strong> {{reserva.objeto}}</p>
+                    <p class="crud-nome"><strong>Data da Reserva: </strong> {{reserva.dataReserva}}</p>
+                    <p class="crud-nome"><strong>Data do Atendimento: </strong> {{reserva.dataAtendimento}}</p>
+                </div>
             
                 <div class="crud-operacao">
                     <a href="{% url 'edit_reserva' reserva.id %}" class="btn editar-btn">Editar</a>

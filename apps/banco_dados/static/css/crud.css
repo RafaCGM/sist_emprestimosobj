@@ -73,7 +73,7 @@ h2 {
 }
 
 /* Estilo para as informações do usuário */
-.crud-nome {
+.crud-usuario {
     display: flex;
     align-items: center;
     justify-content: space-between;

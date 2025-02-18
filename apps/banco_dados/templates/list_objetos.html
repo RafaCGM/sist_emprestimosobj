@@ -2,7 +2,6 @@
 {% load static %}
 {% block title %} Objetos {% endblock %}
 
-
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/crud.css' %}">
 
@@ -16,10 +15,12 @@
     <div class="crud-data">
         {% for objeto in obj %} 
             <div class="crud-usuario">
-                <p class="crud-nome"><strong>Nome: </strong> {{objeto.nome}}</p>
-                <p class="crud-nome"><strong>Descrição: </strong> {{objeto.categoria}}</p>
-                <p class="crud-nome"><strong>Data de Cadastro: </strong> {{objeto.dataCadastro}}</p>
-                <p class="crud-nome"><strong>Categoria: </strong> {{objeto.descricao}}</p>
+                <div class="crud-texto">
+                    <p class="crud-nome"><strong>Nome: </strong> {{objeto.nome}}</p>
+                    <p class="crud-nome"><strong>Descrição: </strong> {{objeto.categoria}}</p>
+                    <p class="crud-nome"><strong>Data de Cadastro: </strong> {{objeto.dataCadastro}}</p>
+                    <p class="crud-nome"><strong>Categoria: </strong> {{objeto.descricao}}</p>
+                </div>
             
                 <div class="crud-operacao">
                     <a href="{% url 'edit_objeto' objeto.id %}" class="btn editar-btn">Editar</a>

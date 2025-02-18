@@ -15,9 +15,11 @@
     <div class="crud-data">
         {% for categoria in catg %} 
             <div class="crud-usuario">
-                <p class="crud-nome"><strong>Nome: </strong> {{categoria.nome}}</p>
-                <p class="crud-nome"><strong>Descrição: </strong> {{categoria.descricao}}</p>
-            
+                <div class="crud-texto">
+                    <p class="crud-nome"><strong>Nome: </strong> {{categoria.nome}}</p>
+                    <p class="crud-nome"><strong>Descrição: </strong> {{categoria.descricao}}</p>
+                </div>
+               
                 <div class="crud-operacao">
                     <a href="{% url 'edit_categoria' categoria.id  %}" class="btn editar-btn">Editar</a>
                     <a href="{% url 'remove_categoria' categoria.id %}" class="btn remover-btn">Remover</a>
