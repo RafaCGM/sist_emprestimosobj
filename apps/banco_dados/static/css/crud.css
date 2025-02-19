@@ -1,130 +1,165 @@
-/* Container principal */
+body {
+    margin: 5rem 0 0 0;
+}
+
+/* Estilos gerais para o container */
 .crud-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 100vh;
-    border-radius: 8px;
+    padding: 40px;
+    height: 90vh;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .crud-cadastrar {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-h2 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Estilos para os botões */
-.btn {
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    display: inline-block;
-    margin: 5px 0;
-    transition: background-color 0.3s ease;
-    margin-bottom: 1.5rem;
-}
-
-.cadastrar-btn {
-    background-color: #28a745;
-}
-
-.cadastrar-btn:hover {
-    background-color: #218838;
-}
-
-.editar-btn {
-    background-color: #007bff;
-}
-
-.editar-btn:hover {
-    background-color: #0056b3;
-}
-
-.remover-btn {
-    background-color: #dc3545;
-}
-
-.remover-btn:hover {
-    background-color: #c82333;
-}
-
-.voltar-btn {
-    background-color: #6c757d;
-    margin-top: 20px;
-    display: block;
-    width: 100%;
-}
-
-.voltar-btn:hover {
-    background-color: #5a6268;
-}
-
-/* Estilo para as informações do usuário */
-.crud-usuario {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: #ffffff;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: .3s ease-in-out ;
-    padding: 1rem;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-.crud-usuario:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.crud-data {
-    width: 100%;
-}
-
-.usuario-nome {
-    font-size: 18px;
+.crud-cadastrar h2 {
+    font-size: 30px;
+    font-weight: 600;
     color: #333;
 }
 
-.crud-operacao {
-    margin-top: 10px;
+.cadastrar-btn {
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-/* Estilos para a seção sem dados */
+.cadastrar-btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para a tabela */
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.crud-table th, .crud-table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+}
+
+.crud-table th {
+    background-color: #f4f4f4;
+    font-weight: 500;
+    color: #333;
+}
+
+.crud-table td {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.crud-table tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+.crud-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para os botões de operação */
+.crud-operacao {
+    justify-content: center;
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 8px 18px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.editar-btn {
+    background-color: #ffa500;
+    color: white;
+}
+
+.editar-btn:hover {
+    background-color: #ff7f00;
+}
+
+.remover-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.remover-btn:hover {
+    background-color: #e53935;
+}
+
+/* Estilo para a mensagem quando não houver dados */
 .no-data {
     text-align: center;
+    color: #888;
+    font-size: 18px;
     font-style: italic;
-    color: #777;
 }
 
-/* Responsividade */
+/* Estilo para o botão de voltar */
+.crud-voltar {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.voltar-btn {
+    padding: 12px 25px;
+    background-color: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.voltar-btn:hover {
+    background-color: #1e88e5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
-    .crud-container {
-        width: 95%;
+    .crud-cadastrar {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    h2 {
-        font-size: 20px;
+    .crud-cadastrar h2 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .crud-table th, .crud-table td {
+        font-size: 14px;
+        padding: 12px;
     }
 
     .btn {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
-
-    .crud-usuario {
-        padding: 12px;
+        padding: 8px 16px;
+        font-size: 13px;
     }
 }

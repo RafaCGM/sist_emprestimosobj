@@ -13,23 +13,35 @@
     </div>
 
     <div class="crud-data">
-        {% for objeto in obj %} 
-            <div class="crud-usuario">
-                <div class="crud-texto">
-                    <p class="crud-nome"><strong>Nome: </strong> {{objeto.nome}}</p>
-                    <p class="crud-nome"><strong>Descrição: </strong> {{objeto.categoria}}</p>
-                    <p class="crud-nome"><strong>Data de Cadastro: </strong> {{objeto.dataCadastro}}</p>
-                    <p class="crud-nome"><strong>Categoria: </strong> {{objeto.descricao}}</p>
-                </div>
-            
-                <div class="crud-operacao">
-                    <a href="{% url 'edit_objeto' objeto.id %}" class="btn editar-btn">Editar</a>
-                    <a href="{% url 'remove_objeto' objeto.id %}" class="btn remover-btn">Remover</a>
-                </div>
-            </div>
-        {% empty %}
-            <p class="no-data">Não há nenhum cadastro de usuário.</p>
-        {% endfor %}
+        {% if obj %}
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Data de Cadastro</th>
+                    <th>Categoria</th>
+                    <th>Operações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for objeto in obj %}
+                <tr>
+                    <td>{{ objeto.nome }}</td>
+                    <td>{{ objeto.categoria }}</td>
+                    <td>{{ objeto.dataCadastro }}</td>
+                    <td>{{ objeto.descricao }}</td>
+                    <td class="crud-operacao">
+                        <a href="{% url 'edit_objeto' objeto.id %}" class="btn editar-btn">Editar</a>
+                        <a href="{% url 'remove_objeto' objeto.id %}" class="btn remover-btn">Remover</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p class="no-data">Não há nenhum objeto cadastrado.</p>
+        {% endif %}
     </div>
 
     <div class="crud-voltar">
@@ -38,3 +50,4 @@
 </div>
 
 {% endblock %}
+

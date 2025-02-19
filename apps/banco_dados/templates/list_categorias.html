@@ -13,21 +13,31 @@
     </div>
 
     <div class="crud-data">
-        {% for categoria in catg %} 
-            <div class="crud-usuario">
-                <div class="crud-texto">
-                    <p class="crud-nome"><strong>Nome: </strong> {{categoria.nome}}</p>
-                    <p class="crud-nome"><strong>Descrição: </strong> {{categoria.descricao}}</p>
-                </div>
-               
-                <div class="crud-operacao">
-                    <a href="{% url 'edit_categoria' categoria.id  %}" class="btn editar-btn">Editar</a>
-                    <a href="{% url 'remove_categoria' categoria.id %}" class="btn remover-btn">Remover</a>
-                </div>
-            </div>
-        {% empty %}
-            <p class="no-data">Não há nenhum cadastro de usuário.</p>
-        {% endfor %}
+        {% if catg %}
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Operações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categoria in catg %}
+                <tr>
+                    <td>{{ categoria.nome }}</td>
+                    <td>{{ categoria.descricao }}</td>
+                    <td class="crud-operacao">
+                        <a href="{% url 'edit_categoria' categoria.id %}" class="btn editar-btn">Editar</a>
+                        <a href="{% url 'remove_categoria' categoria.id %}" class="btn remover-btn">Remover</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p class="no-data">Não há nenhuma categoria cadastrada.</p>
+        {% endif %}
     </div>
 
     <div class="crud-voltar">
@@ -36,4 +46,3 @@
 </div>
 
 {% endblock %}
-

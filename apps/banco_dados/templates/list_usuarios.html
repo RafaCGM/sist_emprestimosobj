@@ -13,20 +13,29 @@
     </div>
 
     <div class="crud-data">
-        {% for x in usuario %}
-            <div class="crud-usuario">
-                <div class="crud-texto">
-                    <p class="crud-nome"><strong>Nome: </strong> {{ x.nome }}</p>
-                </div>
-            
-                <div class="crud-operacao">
-                    <a href="{% url 'edit' x.matricula %}" class="btn editar-btn">Editar</a>
-                    <a href="{% url 'remove' x.matricula %}" class="btn remover-btn">Remover</a>
-                </div>
-            </div>
-        {% empty %}
+        {% if usuario %}
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in usuario %}
+                <tr>
+                    <td>{{ x.nome }}</td>
+                    <td class="crud-operacao">
+                        <a href="{% url 'edit' x.matricula %}" class="btn editar-btn">Editar</a>
+                        <a href="{% url 'remove' x.matricula %}" class="btn remover-btn">Remover</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
             <p class="no-data">Não há nenhum cadastro de usuário.</p>
-        {% endfor %}
+        {% endif %}
     </div>
 
     <div class="crud-voltar">

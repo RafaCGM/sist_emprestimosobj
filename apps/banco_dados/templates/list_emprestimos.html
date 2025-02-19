@@ -13,23 +13,35 @@
     </div>
 
     <div class="crud-data">
-        {% for emprestimo in emp %}  
-            <div class="crud-usuario">
-                <div class="crud-texto">
-                    <p class="crud-nome"><strong>Usuario: </strong> {{emprestimo.usuario}}</p>
-                    <p class="crud-nome"><strong>Objeto: </strong> {{emprestimo.objeto}}</p>
-                    <p class="crud-nome"><strong>Data do Empréstimo: </strong> {{emprestimo.dataEmprestimo}}</p>
-                    <p class="crud-nome"><strong>Data da Devolução: </strong> {{emprestimo.dataDevolucao}} </p>
-                </div>
-                
-                <div class="crud-operacao">
-                    <a href="{% url 'edit_emprestimo' emprestimo.id %}" class="btn editar-btn">Editar</a>
-                    <a href="{% url 'remove_emprestimo' emprestimo.id %}" class="btn remover-btn">Remover</a>
-                </div>
-            </div>
-        {% empty %}
-            <p class="no-data">Não há nenhum cadastro de usuário.</p>
-        {% endfor %}
+        {% if emp %}
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Objeto</th>
+                    <th>Data do Empréstimo</th>
+                    <th>Data da Devolução</th>
+                    <th>Operações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emprestimo in emp %}
+                <tr>
+                    <td>{{ emprestimo.usuario }}</td>
+                    <td>{{ emprestimo.objeto }}</td>
+                    <td>{{ emprestimo.dataEmprestimo }}</td>
+                    <td>{{ emprestimo.dataDevolucao }}</td>
+                    <td class="crud-operacao">
+                        <a href="{% url 'edit_emprestimo' emprestimo.id %}" class="btn editar-btn">Editar</a>
+                        <a href="{% url 'remove_emprestimo' emprestimo.id %}" class="btn remover-btn">Remover</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p class="no-data">Não há nenhum empréstimo cadastrado.</p>
+        {% endif %}
     </div>
 
     <div class="crud-voltar">
@@ -38,4 +50,5 @@
 </div>
 
 {% endblock %}
+
 
