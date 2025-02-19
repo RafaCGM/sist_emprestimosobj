@@ -11,12 +11,16 @@
     <form method="post">
         {% csrf_token %}
 
-        {{ form_objeto }}
+        <strong><p>Nome:</strong> {{ form_objeto.nome }}</p>
+        <strong><p>Descrição</strong> {{ form_objeto.descricao }}</p>
+        <strong><p>Categoria:</strong> {{ form_objeto.categoria }}</p>
 
         <p><input type="submit" value="Cadastrar"></p>
     </form>
 
-    <p><a href="{% url 'list_objeto' %}">Voltar</a></p>
+    <div class="voltar">
+        <a href="{% url 'list_objeto' %}" class="btn voltar-btn">Voltar</a>
+    </div>
 </div>
 
 

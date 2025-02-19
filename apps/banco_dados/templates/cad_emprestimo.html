@@ -10,12 +10,18 @@
 
     <form method="post">
         {% csrf_token %}
-        {{ form_emprestimo }}
+
+        <strong><p>Usuário:</strong> {{ form_emprestimo.usuario }}</p>
+        <strong><p>Objeto:</strong> {{ form_emprestimo.objeto }}</p>
+        <strong><p>Data de Empréstimo:</strong> {{ form_emprestimo.dataEmprestimo }}</p>
+        <strong><p>Data de Devolução:</strong> {{ form_emprestimo.dataDevolucao }}</p>
 
         <p><input type="submit" value="Cadastrar"></p>
     </form>
 
-    <p><a href="{% url 'list_emprestimo' %}">Voltar</a></p>
+    <div class="voltar">
+        <a href="{% url 'list_emprestimo' %}" class="btn voltar-btn">Voltar</a>
+    </div>
 </div>
 
 

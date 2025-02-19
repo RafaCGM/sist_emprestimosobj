@@ -57,3 +57,25 @@ input, select, textarea {
     font-size: 14px;
 }
 
+.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.voltar-btn {
+    background-color: #6c757d;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+.voltar-btn:hover {
+    background-color: #5a6268;
+}
