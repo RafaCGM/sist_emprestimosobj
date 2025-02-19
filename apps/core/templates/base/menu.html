@@ -6,14 +6,30 @@
     <meta charset="UTF-8">
     <title>{% block title %} COAPAC {% endblock %}</title>
     <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/base.css' %}">
+    <script src="https://kit.fontawesome.com/2f89107e0d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <p> Aqui é a header</p>
-        <nav>
-            <a href="/"> Home </a> |
-            <a href="#"> Sobre </a> |
-            <a href="{% url 'login' %}"> Login </a>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div>
+                <a href="{% url 'home' %}"><img class="nav_logo" src="{% static 'images/logo.png' %}" alt="Logo">
+                </a>
+                
+            </div>
+
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li>
+                        <input class="nav_input" type="text" id="search" placeholder="Digite sua pesquisa...">
+                        <button class="nav_botao">Pesquisar</button>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}">    
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </li>
+    
+                </ul>
         </nav>
     </header>
 

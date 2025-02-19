@@ -47,6 +47,7 @@ def view_registro(request):
     }
     return render(request, 'registration/registro.html', context)
 
+@login_required
 def list_usuario(request):
     allU = Usuario.objects.all()
     context = {
@@ -55,6 +56,7 @@ def list_usuario(request):
 
     return render(request, 'list_usuarios.html', context)
 
+@login_required
 def editar_registro(request, matricula):
     registro = Usuario.objects.get(pk=matricula)
     form = RegistroForm(request.POST or None, instance=registro)
@@ -68,6 +70,7 @@ def editar_registro(request, matricula):
     }
     return render(request, 'registration/registro.html', context)
 
+@login_required
 def remover_registro(request, matricula):
     user = Usuario.objects.get(pk=matricula)
     user.delete()
@@ -79,6 +82,7 @@ def remover_registro(request, matricula):
 
 '''
 
+@login_required
 def cad_categoria(request):
     form = CategoriaForm(request.POST or None)
 
@@ -92,7 +96,7 @@ def cad_categoria(request):
 
     return render(request, 'cad_categoria.html', context)
 
-
+@login_required
 def list_categoria(request):
     allC = Categoria.objects.all()
     context = {
@@ -101,6 +105,7 @@ def list_categoria(request):
 
     return render(request, 'list_categorias.html', context)
 
+@login_required
 def editar_categoria(request, id):
     catg = Categoria.objects.get(pk=id)
     form = CategoriaForm(request.POST or None, instance=catg)
@@ -114,6 +119,7 @@ def editar_categoria(request, id):
     }
     return render(request, 'cad_categoria.html', context)
 
+@login_required
 def remover_categoria(request, id):
     categoria = Categoria.objects.get(pk=id)
     categoria.delete()
@@ -126,6 +132,7 @@ def remover_categoria(request, id):
 
 '''
 
+@login_required
 def cad_objeto(request):
     form = ObjetoForm(request.POST or None)
 
@@ -139,6 +146,7 @@ def cad_objeto(request):
 
     return render(request, 'cad_objeto.html', context)
 
+@login_required
 def list_objeto(request):
     allC = Objeto.objects.all()
     context = {
@@ -147,6 +155,7 @@ def list_objeto(request):
 
     return render(request, 'list_objetos.html', context)
 
+@login_required
 def editar_objeto(request, id):
     editarObjeto = Objeto.objects.get(pk=id)
     form = ObjetoForm(request.POST or None, instance=editarObjeto)
@@ -160,6 +169,7 @@ def editar_objeto(request, id):
     }
     return render(request, 'cad_objeto.html', context)
 
+@login_required
 def remover_objeto(request, id):
     objeto = Objeto.objects.get(pk=id)
     objeto.delete()
@@ -172,7 +182,7 @@ def remover_objeto(request, id):
 ============= EMPRESTIMO =============
 
 '''
-
+@login_required
 def cad_emprestimo(request):
     form = EmprestimoForm(request.POST or None)
 
@@ -186,6 +196,7 @@ def cad_emprestimo(request):
 
     return render(request, 'cad_emprestimo.html', context)
 
+@login_required
 def list_emprestimo(request):
     allC = Emprestimo.objects.all()
 
@@ -195,6 +206,7 @@ def list_emprestimo(request):
 
     return render(request, 'list_emprestimos.html', context)
 
+@login_required
 def editar_emprestimo(request, id):
     editarEmprestimo = Emprestimo.objects.get(pk=id)
     form = EmprestimoForm(request.POST or None, instance=editarEmprestimo)
@@ -208,6 +220,7 @@ def editar_emprestimo(request, id):
     }
     return render(request, 'cad_emprestimo.html', context)
 
+@login_required
 def remover_emprestimo(request, id):
     emprestimo = Emprestimo.objects.get(pk=id)
     emprestimo.delete()
@@ -220,6 +233,7 @@ def remover_emprestimo(request, id):
 
 '''
 
+@login_required
 def cad_reserva(request):
     form = ReservaForm(request.POST or None)
 
@@ -232,7 +246,7 @@ def cad_reserva(request):
     }
     return render(request, 'cad_reserva.html', context)
 
-
+@login_required
 def list_reserva(request):
 
     allR = Reserva.objects.all()
@@ -243,7 +257,7 @@ def list_reserva(request):
 
     return render(request, 'list_reserva.html', context)
 
-
+@login_required
 def editar_reserva(request, id):
     editarReserva = Reserva.objects.get(pk=id)
     form = ReservaForm(request.POST or None, instance=editarReserva)
@@ -257,6 +271,7 @@ def editar_reserva(request, id):
     }
     return render(request, 'cad_reserva.html', context)
 
+@login_required
 def remover_reserva(request, id):
     reserva = Reserva.objects.get(pk=id)
     reserva.delete()

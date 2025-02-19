@@ -25,8 +25,16 @@
                         <button class="nav_botao">Pesquisar</button>
                     </li>
                     <li>
-                        <a href="{% url 'login' %}">    
+                        <h2> {{ user.nome }} </h2>
+                    </li>
+                    <li>
+                        <a href="{% url 'perfil' %}">    
                             <i class="fa-solid fa-user"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}">
+                            <i class="fa-solid fa-right-from-bracket"></i>
                         </a>
                     </li>
     

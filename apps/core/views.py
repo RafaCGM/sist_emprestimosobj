@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
 # EasterEgg que ninguém se importa: lá vai o condenado abrir mais uma view
 
+@login_required
 def view_home(request):
     return render(request, 'home.html')
 
+@login_required
 def view_perfil(request):
     return render(request, 'perfil.html')
 
