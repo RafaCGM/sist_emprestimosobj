@@ -85,7 +85,7 @@ nav {
     padding: 10px 15px;
     font-size: 16px;
     background-color:rgb(113, 216, 113);
-    color: black;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -95,16 +95,15 @@ nav {
 /*=============== FOOTER ===============*/
 
 footer {
-    position: relative;
+    position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
 }
+
 
 
