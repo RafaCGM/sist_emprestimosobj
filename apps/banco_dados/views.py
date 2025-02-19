@@ -32,7 +32,7 @@ def view_login(request):
         if('nome' in resposta.json()):
             return redirect('home')
         else:
-            messages.error(request, "Usuário ou senha incorretos"+password)
+            messages.error(request, "Usuário ou senha incorretos.")
     
     else:
         return render(request, "registration/login.html")
