@@ -5,6 +5,25 @@
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/perfil.css' %}">
 
-<h1> Página de Perfil </h1>
+<div class="perfil_container">
+    <div class="perfil_data">
+        <div class="perfil_info">
+            <h2>{{ usuario.nome }}</h2>
+            <p>Email: {{ usuario.email }}</p>
+            <p>Telefone: {{ usuario.telefone }}</p>
+        </div>
+    </div>
+
+    <div class="perfil_crud">
+        <h2>Menu de Administração</h2>
+        <ul>
+            <li><a href="{% url 'cad_categoria' %}">Cadastro de Categorias</a></li>
+            <li><a href="{% url 'cad_objeto' %}">Cadastro de Objetos</a></li>
+            <li><a href="{% url 'cad_emprestimo' %}">Cadastro de Empréstimos</a></li>
+            <li><a href="{% url 'cad_reserva' %}">Cadastro de Reservas</a></li>
+            <li><a href="{% url 'list_usuario' %}">Lista de Usuários</a></li>
+        </ul>
+    </div>
+</div>
 
 {% endblock %}

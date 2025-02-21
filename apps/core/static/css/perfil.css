@@ -1,4 +1,83 @@
-h1 {
-    text-align: center; 
-    padding-top: 20rem;
+
+.perfil_container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    height: 100%;
+    background-color: #fafafa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh; /* Garante que a altura mínima seja 100% da altura da tela */
+}
+
+.perfil_data {
+    width: 48%; 
+}
+
+.perfil_info h2 {
+    font-size: 26px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.perfil_info p {
+    font-size: 18px;
+    color: #666;
+    margin: 8px 0;
+}
+
+.perfil_info p strong {
+    color: #333;
+}
+
+.perfil_crud {
+    width: 48%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 2px solid #e0e0e0;
+}
+
+.perfil_crud h2 {
+    font-size: 22px;
+    color: #4CAF50;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.perfil_crud ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.perfil_crud li {
+    margin: 15px 0;
+}
+
+.perfil_crud a {
+    font-size: 18px;
+    color: #4CAF50;
+    text-decoration: none;
+    display: block;
+    padding: 8px 15px;
+    border-radius: 6px;
+    background-color: rgba(76, 175, 80, 0.1); /* Fundo leve para os links */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.perfil_crud a:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: translateX(5px); 
+}
+
+
+.perfil_crud a:active {
+    transform: translateX(2px);
 }
