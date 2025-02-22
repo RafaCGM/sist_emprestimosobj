@@ -11,10 +11,10 @@
     <form method="post">
         {% csrf_token %}
 
-        <strong><p>Usuário:</strong> {{ form_emprestimo.usuario }}</p>
-        <strong><p>Objeto:</strong> {{ form_emprestimo.objeto }}</p>
-        <strong><p>Data de Empréstimo:</strong> {{ form_emprestimo.dataEmprestimo }}</p>
-        <strong><p>Data de Devolução:</strong> {{ form_emprestimo.dataDevolucao }}</p>
+        <strong><p>Usuário</strong> {{ form_emprestimo.usuario }}</p>
+        <strong><p>Objeto</strong> {{ form_emprestimo.objeto }}</p>
+        <strong><p>Data de Empréstimo</strong> {{ form_emprestimo.dataEmprestimo }}</p>
+        <strong><p>Data de Devolução</strong> {{ form_emprestimo.dataDevolucao }}</p>
 
         <p><input type="submit" value="Cadastrar"></p>
     </form>

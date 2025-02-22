@@ -11,10 +11,10 @@
     <form method="post">
         {% csrf_token %}
 
-        <strong><p>Usuário:</strong> {{ form_reserva.usuario }}</p>
-        <strong><p>Objeto:</strong> {{ form_reserva.objeto }}</p>
-        <strong><p>Data da Reserva:</strong> {{ form_reserva.dataReserva }}</p>
-        <strong><p>Data de Atendimento:</strong> {{ form_reserva.dataAtendimento }}</p>
+        <strong><p>Usuário</strong> {{ form_reserva.usuario }}</p>
+        <strong><p>Objeto</strong> {{ form_reserva.objeto }}</p>
+        <strong><p>Data da Reserva</strong> {{ form_reserva.dataReserva }}</p>
+        <strong><p>Data de Atendimento</strong> {{ form_reserva.dataAtendimento }}</p>
 
         <p><input type="submit" value="Cadastrar"></p>
     </form> 

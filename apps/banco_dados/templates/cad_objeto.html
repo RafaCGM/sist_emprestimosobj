@@ -11,9 +11,9 @@
     <form method="post">
         {% csrf_token %}
 
-        <strong><p>Nome:</strong> {{ form_objeto.nome }}</p>
+        <strong><p>Nome</strong> {{ form_objeto.nome }}</p>
         <strong><p>Descrição</strong> {{ form_objeto.descricao }}</p>
-        <strong><p>Categoria:</strong> {{ form_objeto.categoria }}</p>
+        <strong><p>Categoria</strong> {{ form_objeto.categoria }}</p>
 
         <p><input type="submit" value="Cadastrar"></p>
     </form>

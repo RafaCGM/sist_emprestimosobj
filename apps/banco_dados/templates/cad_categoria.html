@@ -8,10 +8,10 @@
 <div class="bloco">
     <h1> CADASTRAR CATEGORIA </h1>
 
-    <form method="post">
+    <form class="form" method="post">
         {% csrf_token %}
-        <strong><p>Nome:</strong> {{ form_categoria.nome }}</p>
-        <strong><p>Descrição:</strong> {{ form_categoria.descricao }}</p>
+        <strong><p>Nome</strong> {{ form_categoria.nome }}</p>
+        <strong><p>Descrição</strong> {{ form_categoria.descricao }}</p>
 
         <p><input type="submit" value="Cadastrar"></p>
     </form>

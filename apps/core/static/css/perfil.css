@@ -1,20 +1,37 @@
-
 .perfil_container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px;
-    height: 100%;
     background-color: #fafafa;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center; 
     align-items: center;
-    min-height: 100vh; /* Garante que a altura mínima seja 100% da altura da tela */
+    min-height: 100vh; /* Garante que a altura mínima seja 100% da altura da tela */  
+    gap: 5rem;
 }
 
 .perfil_data {
-    width: 48%; 
+    background-color: #4CAF50;
+    min-height: 100vh;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 5rem;
+}
+
+.perfil_sair a {
+    padding: 10px 40px;
+    font-size: 16px;
+    background-color:rgb(113, 216, 113);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.5s ease-in-out;
 }
 
 .perfil_info h2 {
@@ -26,7 +43,7 @@
 
 .perfil_info p {
     font-size: 18px;
-    color: #666;
+    color: #ffffff;
     margin: 8px 0;
 }
 
@@ -76,7 +93,6 @@
     color: white;
     transform: translateX(5px); 
 }
-
 
 .perfil_crud a:active {
     transform: translateX(2px);
