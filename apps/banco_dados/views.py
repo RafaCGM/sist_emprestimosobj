@@ -18,7 +18,6 @@ def view_login(request):
     if request.method == "POST":
         email = request.POST['email']
         password = request.POST['password']
-        #user = authenticate(request, email=email, password=password)
 
         autenticacao = {
             'email': email,
@@ -39,22 +38,29 @@ def view_login(request):
 
     return render(request, 'registration/login.html')
 
-def view_deslogar(request):
-    logout(request)
-    return redirect("login")
-
 def view_registro(request):
+    if request.method == "POST":
+        nome = request.POST['nome']
+        cpf = request.POST['cpf']
+        telefone = request.POST['telefone']
+        email = request.POST['email']
+        password = request.POST['password']
 
-    form = RegistroForm(request.POST or None)
+        usuario = {
+            'nome': nome,
+            'cpf': cpf,
+            'telefone': telefone,
+            'email': email,
+            'password': password,
+        }
 
-    if form.is_valid():
-        form.save()
-        return redirect(view_login)
+        resposta = requests.post('http://localhost:3000/signup', 
+                data=json.dumps(usuario), 
+                headers={"Content-Type": "application/json"})
+        
+        return redirect('login')
 
-    context = {
-        'form_registro': form
-    }
-    return render(request, 'registration/registro.html', context)
+    return render(request, 'registration/registro.html')
 
 def list_usuario(request):
     allU = Usuario.objects.all()
@@ -81,6 +87,10 @@ def remover_registro(request, matricula):
     user = Usuario.objects.get(pk=matricula)
     user.delete()
     return redirect('list_usuario')
+
+def view_deslogar(request):
+    logout(request)
+    return redirect("login")
 
 '''
 
