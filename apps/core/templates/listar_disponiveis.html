@@ -5,6 +5,38 @@
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/listar_disponiveis.css' %}">
 
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+
+<div class="emprestimo_data">
+    <h2>Objetos Disponíveis</h2>
+
+    <div class="emprestimo_card_container">      
+        {% for objeto in objetos %}
+            <div class="emprestimo_card">   
+                <div class="emprestimo_info">
+                    <p>{{ objeto.nome }}</p>
+                </div>
+
+                <div class="emprestimo_botao">
+                    <a href="{% url 'emprestar_objeto' objeto.id %}" class="btn">Emprestar</a>
+                </div>
+            </div>
+        {% empty %}
+            <p class="empty_message">Nenhum objeto disponível no momento.</p>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!------
+
 <div class="principal">
 
     <h1> OBJETOS DISPONÍVEIS </h1>
@@ -17,5 +49,7 @@
     </div>
     
 </div>
+---->
+
 
 {% endblock %}
