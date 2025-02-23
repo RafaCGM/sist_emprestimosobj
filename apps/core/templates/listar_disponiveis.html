@@ -1,0 +1,21 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} Objetos disponíveis {% endblock %}
+
+{% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/listar_disponiveis.css' %}">
+
+<div class="principal">
+
+    <h1> OBJETOS DISPONÍVEIS </h1>
+    <div class="box">
+        {% for objeto in objetos %}
+            <p>{{ objeto.nome }} - <a href="{% url 'emprestar_objeto' objeto.id %}">Emprestar</a></p>
+            {% empty %}
+            <p>Nenhum objeto disponível no momento.</p>
+        {% endfor %}
+    </div>
+    
+</div>
+
+{% endblock %}

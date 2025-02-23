@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include ('apps.core.urls')),
     path('', include ('apps.banco_dados.urls')),
+    path('', include ('apps.express.urls')),
+
 ]

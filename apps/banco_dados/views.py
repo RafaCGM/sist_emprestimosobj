@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import *
 from .forms import *
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
 import requests
 import json
 
@@ -15,52 +15,29 @@ import json
 '''
 
 def view_login(request):
-    if request.method == "POST":
-        email = request.POST['email']
-        password = request.POST['password']
+    if request.POST:
+        email = request.POST["email"]
+        senha = request.POST["password"]
+        user = authenticate(request, email=email, password=senha)
 
-        autenticacao = {
-            'email': email,
-            'password': password,
-        }
-
-        resposta = requests.post('http://localhost:3000/signin', 
-                data=json.dumps(autenticacao), 
-                headers={"Content-Type": "application/json"})
-
-        if('nome' in resposta.json()):
-            return redirect('home')
+        if user is not None:
+            login(request, user)
+            return redirect("perfil")
         else:
-            messages.error(request, "Usuário ou senha incorretos.")
-    
-    else:
-        return render(request, "registration/login.html")
+            return render(request, "registration/login.html")
 
     return render(request, 'registration/login.html')
 
 def view_registro(request):
-    if request.method == "POST":
-        nome = request.POST['nome']
-        cpf = request.POST['cpf']
-        telefone = request.POST['telefone']
-        email = request.POST['email']
-        password = request.POST['password']
-
-        usuario = {
-            'nome': nome,
-            'cpf': cpf,
-            'telefone': telefone,
-            'email': email,
-            'password': password,
-        }
-
-        resposta = requests.post('http://localhost:3000/signup', 
-                data=json.dumps(usuario), 
-                headers={"Content-Type": "application/json"})
-        
+    form = RegistroForm(request.POST or None)
+    if form.is_valid():
+        form.save()
         return redirect('login')
+    contexto = {
+        'form_registro': form
+    }
 
-    return render(request, 'registration/registro.html')
+    return render(request, 'registration/registro.html', contexto)
 
 def list_usuario(request):
     allU = Usuario.objects.all()

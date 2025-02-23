@@ -34,12 +34,14 @@ body {
     margin-bottom: 1rem;
 }
 
+/*
 .form_field {
     display: flex;
     flex-direction: column;
-    width: calc(50% - 10px); /* Metade da largura com espaço entre os campos */
+    width: calc(50% - 10px); 
     margin-bottom: 1rem;
 }
+*/
 
 .form_field2 {
     display: flex;

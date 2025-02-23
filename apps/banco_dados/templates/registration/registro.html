@@ -13,46 +13,34 @@
         
         <!-- Matrícula + Nome Completo -->
         <div class="form_input">
-            <!-- <div class="form_field">  
+            <div class="form_field">  
                 <label for="id_matricula">Matrícula</label>
                 {{ form_registro.matricula }} 
                 
-            </div>-->
-            <div class="form_field2">
+            </div>
+            <div class="form_field">
                 <label for="id_email">Nome</label>
-                <!-- {{ form_registro.nome }} -->
-                <input type="text" name="nome" placeholder="Nome" class="input">
+                {{ form_registro.nome }}
             </div>
         </div>
     
         <!-- Usuário + Telefone -->
         <div class="form_input">
-            <!-- <div class="form_field">
+            <div class="form_field">
                 <label for="id_username">Usuário</label>
                 {{ form_registro.username }}
-                <input type="text" name="nome" placeholder="Nome" class="input">
-            </div> -->
-            <div class="form_field2">
-                <label for="id_email">Telefone</label>
-                <!-- {{ form_registro.telefone }} -->
-                <input type="text" name="telefone" placeholder="Telefone" class="input">
             </div>
-        </div>
-
-        <div class="form_input">
-            <div class="form_field2">
-                <label for="id_email">CPF</label>
-                <!-- {{ form_registro.email }} -->
-                <input type="text" name="cpf" placeholder="CPF" class="input">
-            </div>     
+            <div class="form_field">
+                <label for="id_telefone">Telefone</label>
+                {{ form_registro.telefone }}
+            </div>
         </div>
 
         <!-- E-mail -->
         <div class="form_input">
             <div class="form_field2">
                 <label for="id_email">E-mail</label>
-                <!-- {{ form_registro.email }} -->
-                <input type="text" name="email" placeholder="E-mail" class="input">
+                {{ form_registro.email }}
             </div>     
         </div>
     
@@ -60,19 +48,18 @@
         <div class="form_input">
             <div class="form_field2">
                 <label for="id_password1">Senha</label>
-                <!-- {{ form_registro.password1 }} -->
-                <input type="text" name="password" placeholder="Senha" class="input">
+                 {{ form_registro.password1 }}
             </div>
         </div>
     
-        <!-- Repetir Senha 
+        <!-- Repetir Senha -->
         <div class="form_input">
             <div class="form_field2">
                 <label for="id_password2">Repetir Senha</label>
                 {{ form_registro.password2 }}
             </div>
         </div>
-        -->
+        
 
         <!-- Botão de Envio -->
         <div class="form_botao">

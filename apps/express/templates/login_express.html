@@ -3,12 +3,12 @@
 {% block title %} Login {% endblock %}
 
 {% block content %}
-<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/login.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/login_express.css' %}">
 
 <section class="forms form_container">
     <div class="form login">
         <div class="form-content">
-            <h2>Login</h2>
+            <h2>Login Express</h2>
             
             {% if messages %}
                 {% for message in messages %}
@@ -38,11 +38,11 @@
                 </div>
 
                 <div class="form_link">
-                    <span>Não possui uma conta? <a href="{% url 'registro' %}">Cadastrar</a></span>
+                    <span>Não possui uma conta? <a href="{% url 'registro_express' %}">Cadastrar</a></span>
                 </div>
 
                 <div class="form_link">
-                    <span>Logar via servidor Express <a href="{% url 'login_express' %}">AQUI</a></span>
+                    <span>Logar via Django <a href="{% url 'login_express' %}">AQUI</a></span>
                 </div>
 
             </form>

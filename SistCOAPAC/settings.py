@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.core',
     'apps.banco_dados',
+    'apps.express',
 ]
 
 MIDDLEWARE = [

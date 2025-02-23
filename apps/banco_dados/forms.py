@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm
-from .models import *
 from django.contrib.auth.forms import UserCreationForm
+from .models import *
 
 class RegistroForm(UserCreationForm):
     class Meta:
@@ -21,7 +21,7 @@ class ObjetoForm(ModelForm):
 class EmprestimoForm(ModelForm):
     class Meta:
         model = Emprestimo
-        fields = ['usuario','objeto','dataEmprestimo','dataDevolucao']
+        fields = ['usuario','objeto','dataDevolucao']
 
     dataDevolucao = forms.DateTimeField(required=False) 
 

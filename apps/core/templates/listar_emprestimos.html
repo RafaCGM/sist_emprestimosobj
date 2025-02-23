@@ -1,0 +1,27 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} Empréstimos em andamento {% endblock %}
+
+{% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/listar_emprestimos.css' %}">
+
+<div class="principal">
+    <h1> EMPRÉSTIMOS EM ANDAMENTO </h1>
+
+    <div class="list">
+        {% for emprestimo in emprestimos %}
+            <p>{{ emprestimo.objeto.nome }} - 
+                
+                {% if not emprestimo.devolvido %}
+                    <a href="{% url 'devolver_objeto' emprestimo.id %}">Devolver</a>
+                {% endif %}
+
+                {% empty %}
+                <p> Nenhuhm empréstimo foi realizado no momento.</p>
+            </p>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

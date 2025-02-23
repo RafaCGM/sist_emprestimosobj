@@ -1,30 +1,46 @@
-from django.shortcuts import render, redirect
-from django.http import JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.utils.timezone import now
+from apps.banco_dados.models import *
 
 # EasterEgg que ninguém se importa: lá vai o condenado abrir mais uma view
 
+'''
+============= PÁGINAS =============
+'''
 def view_home(request):
     return render(request, 'home.html')
 
 def view_perfil(request):
     return render(request, 'perfil.html')
 
-'''
-def view_Json(request):
-    comments = [
-        {'name' : 'Prenho Souza',
-        'username' : 'Lobo mau da bolsa',
-        'matricula' : '20231198060010'},
-        {'name' : 'Rafael',
-         'username' : 'tripa seca',
-        'matricula' : '20231198060020'
-        },
-        {'name' : 'Euller',
-         'username' : 'hair and shoulders',
-        'matricula' : '20231198060030'
-        }
-    ]
 
-    return JsonResponse({'comments' : comments})
 '''
+============= FUNCIONALIDADES =============
+'''
+def view_listar_objetos(request):
+    objetos = Objeto.objects.filter(disponivel=True)
+    return render(request, 'listar_disponiveis.html', {'objetos': objetos})
+
+def view_listar_emprestimos(request):
+    emprestimos = Emprestimo.objects.filter(usuario=request.user)
+    return render(request, 'listar_emprestimos.html', {'emprestimos': emprestimos})
+
+def view_emprestar_objeto(request, objeto_id):
+    objeto = get_object_or_404(Objeto, id=objeto_id)
+    if objeto.disponivel:
+        Emprestimo.objects.create(objeto=objeto, usuario=request.user)
+        objeto.disponivel = False
+        objeto.save()
+    return redirect('objetos_disponiveis')
+
+def view_devolver_objeto(request, emprestimo_id):
+    emprestimo = get_object_or_404(Emprestimo, id=emprestimo_id, usuario=request.user)
+    if not emprestimo.devolvido:
+        emprestimo.devolvido = True
+        emprestimo.dataDevolucao = now()
+        emprestimo.save()
+        emprestimo.objeto.disponivel = True
+        emprestimo.objeto.save()
+    return redirect('listar_emprestimos')
