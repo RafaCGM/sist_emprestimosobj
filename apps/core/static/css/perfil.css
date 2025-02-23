@@ -34,21 +34,22 @@
     transition: 0.5s ease-in-out;
 }
 
+.perfil_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .perfil_info h2 {
-    font-size: 26px;
-    color: #333;
-    font-weight: bold;
+    font-size: 1.4rem;
+    color: black;
     margin-bottom: 12px;
 }
 
 .perfil_info p {
-    font-size: 18px;
+    font-size: 1rem;
     color: #ffffff;
     margin: 8px 0;
-}
-
-.perfil_info p strong {
-    color: #333;
 }
 
 .perfil_crud {

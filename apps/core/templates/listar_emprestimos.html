@@ -5,23 +5,29 @@
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/listar_emprestimos.css' %}">
 
-<div class="principal">
-    <h1> EMPRÉSTIMOS EM ANDAMENTO </h1>
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
 
-    <div class="list">
+<div class="emprestimo_data">
+    <h2>Empréstimos em Andamento</h2>
+
+    <div class="emprestimo_card_container">
         {% for emprestimo in emprestimos %}
-            <p>{{ emprestimo.objeto.nome }} - 
-                
-                {% if not emprestimo.devolvido %}
-                    <a href="{% url 'devolver_objeto' emprestimo.id %}">Devolver</a>
-                {% endif %}
-
-                {% empty %}
-                <p> Nenhum empréstimo foi realizado no momento.</p>
-            </p>
+            <div class="emprestimo_card">
+                <div class="emprestimo_info">
+                    <p>{{ emprestimo.objeto.nome }}</p>
+                </div>
+               
+                <div class="emprestimo_botao">
+                    {% if not emprestimo.devolvido %}
+                    <a href="{% url 'devolver_objeto' emprestimo.id %}" class="btn">Devolver</a>
+                    {% endif %}
+                </div>      
+            </div>
+        {% empty %}
+            <p class="empty_message">Nenhum empréstimo foi realizado no momento.</p>
         {% endfor %}
     </div>
-
 </div>
 
 {% endblock %}
