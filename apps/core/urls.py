@@ -9,4 +9,5 @@ urlpatterns = [
     path('devolver/<int:emprestimo_id>/', view_devolver_objeto, name='devolver_objeto'),
     path('emprestimosand/', view_listar_emprestimos, name='listar_emprestimos'),
     
+    path('removerexpress/', view_remover_usuarioexpress, name='remove_express')
 ]

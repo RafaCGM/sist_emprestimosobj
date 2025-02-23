@@ -44,3 +44,10 @@ def view_devolver_objeto(request, emprestimo_id):
         emprestimo.objeto.disponivel = True
         emprestimo.objeto.save()
     return redirect('listar_emprestimos')
+
+'''
+============= EXPRESS =============
+'''
+
+def view_remover_usuarioexpress(request):
+    return render(request, 'removerexpress.html')

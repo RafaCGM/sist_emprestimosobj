@@ -1,0 +1,18 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block title %} Perfil {% endblock %}
+
+{% block content %}
+<div style="padding-top: 6rem;">
+    <h1>Remover usuário express:</h1>
+    <h2>Digite o ID do usuário que deseja remover: </h2>
+    <form action="http://localhost:3000/usuarios/remove" method="post">
+        <div>
+            <h3>ID: <input type="text" name="idusuario"></h3>
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+</div>
+{% endblock %}

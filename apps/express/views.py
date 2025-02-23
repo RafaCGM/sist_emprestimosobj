@@ -55,4 +55,4 @@ def view_registro_express(request):
         
         return redirect('login_express')
 
-    return render(request, 'registration/registro_express.html')
+    return render(request, 'registro_express.html')
