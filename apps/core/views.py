@@ -3,6 +3,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.utils.timezone import now
 from apps.banco_dados.models import *
+from apps.banco_dados.forms import *
+from .serializers import *
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 # EasterEgg que ninguém se importa: lá vai o condenado abrir mais uma view
 
@@ -44,6 +49,17 @@ def view_devolver_objeto(request, emprestimo_id):
         emprestimo.objeto.disponivel = True
         emprestimo.objeto.save()
     return redirect('listar_emprestimos')
+
+
+'''
+============= API =============
+'''
+@api_view(['GET'])
+def categoriaAPIlistar(request):
+    categorias = Categoria.objects.all()
+    categoria_serializer = CategoriaSerializer(categorias, many=True)
+    return Response(categoria_serializer.data)
+
 
 '''
 ============= EXPRESS =============

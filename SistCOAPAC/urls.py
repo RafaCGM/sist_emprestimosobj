@@ -22,5 +22,8 @@ urlpatterns = [
     path('', include ('apps.core.urls')),
     path('', include ('apps.banco_dados.urls')),
     path('', include ('apps.express.urls')),
+    
+    # API
+    path('api/v1/', include('apps.core.urls_api')),
 
 ]
