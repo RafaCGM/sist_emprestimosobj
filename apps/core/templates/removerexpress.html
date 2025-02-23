@@ -4,16 +4,21 @@
 
 {% block content %}
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/remover_express.css' %}">
-<div style="padding-top: 6rem;">
-    <h1>Remover usuário express:</h1>
-    <h2>Digite o ID do usuário que deseja remover: </h2>
-    <form action="http://localhost:3000/usuarios/remove" method="post">
-        <div>
-            <h3>ID: <input type="text" name="idusuario"></h3>
-        </div>
-        <div>
-            <input type="submit" value="Enviar">
-        </div>
-    </form>
+
+<div class="container">
+    <div class="perfil-box">
+        <h1>Remover usuário express:</h1>
+        <h2>Digite o ID do usuário que deseja remover:</h2>
+        
+        <form action="http://localhost:3000/usuarios/remove" method="post">
+            <div class="form-group">
+                <label for="idusuario">ID:</label>
+                <input type="text" id="idusuario" name="idusuario">
+            </div>
+            <div>
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
