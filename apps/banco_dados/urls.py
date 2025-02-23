@@ -30,7 +30,6 @@ urlpatterns = [
     path('remover_emprestimo/<int:id>/', remover_emprestimo, name='remove_emprestimo'),
 
     # RESERVA
-    
     path('cad_reserva/', cad_reserva, name='cad_reserva'),
     path('reservas/', list_reserva, name='list_reserva'),
     path('editar_reserva/<int:id>/', editar_reserva, name='edit_reserva'),

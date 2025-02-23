@@ -7,7 +7,6 @@ from .forms import *
 import requests
 import json
 
-
 '''
 
 ============= USUARIOS/AUTENTICAÇÃO =============
@@ -25,6 +24,7 @@ def view_login(request):
             return redirect("perfil")
         else:
             return render(request, "registration/login.html")
+            messages.error(request, "Usuário ou senha incorretos.")
 
     return render(request, 'registration/login.html')
 
@@ -68,6 +68,8 @@ def remover_registro(request, matricula):
 def view_deslogar(request):
     logout(request)
     return redirect("login")
+
+
 
 '''
 
@@ -113,6 +115,7 @@ def remover_categoria(request, id):
     categoria = Categoria.objects.get(pk=id)
     categoria.delete()
     return redirect('list_categoria')
+
 
 
 '''
@@ -207,6 +210,7 @@ def remover_emprestimo(request, id):
     emprestimo = Emprestimo.objects.get(pk=id)
     emprestimo.delete()
     return redirect('list_emprestimo')
+
 
 
 '''
