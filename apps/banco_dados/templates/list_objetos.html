@@ -28,9 +28,9 @@
                 {% for objeto in obj %}
                 <tr>
                     <td>{{ objeto.nome }}</td>
-                    <td>{{ objeto.categoria }}</td>
-                    <td>{{ objeto.dataCadastro }}</td>
                     <td>{{ objeto.descricao }}</td>
+                    <td>{{ objeto.dataCadastro }}</td>
+                    <td>{{ objeto.categoria }}</td>
                     <td class="crud-operacao">
                         <a href="{% url 'edit_objeto' objeto.id %}" class="btn editar-btn">Editar</a>
                         <a href="{% url 'remove_objeto' objeto.id %}" class="btn remover-btn">Remover</a>
