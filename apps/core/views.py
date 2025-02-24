@@ -50,20 +50,53 @@ def view_devolver_objeto(request, emprestimo_id):
         emprestimo.objeto.save()
     return redirect('listar_emprestimos')
 
-
-'''
-============= API =============
-'''
-@api_view(['GET'])
-def categoriaAPIlistar(request):
-    categorias = Categoria.objects.all()
-    categoria_serializer = CategoriaSerializer(categorias, many=True)
-    return Response(categoria_serializer.data)
-
-
 '''
 ============= EXPRESS =============
 '''
 
 def view_remover_usuarioexpress(request):
     return render(request, 'removerexpress.html')
+
+
+
+ 
+'''
+=========================== API VIEWS ===========================
+'''
+
+
+
+'''
+============= CATEGORIA =============
+'''
+
+@api_view(['GET'])
+def categoriaAPIlistar(request):
+    categorias = Categoria.objects.all()
+    categoria_serializer = CategoriaSerializer(categorias, many=True)
+    return Response(categoria_serializer.data)
+
+@api_view(['PUT'])
+def categoriaAPIadicionar(request):
+    categoria = CategoriaSerializer(data=request.data)
+    if categoria.is_valid():
+        categoria.save()
+        return Response(categoria.data, status=status.HTTP_201_CREATED)
+
+@api_view(['POST'])
+def categoriaAPIatualizar(request, id):
+    categoria_bd = Categoria.objects.get(id=id)
+    categoria = CategoriaSerializer(data=request.data,
+                                 instance=categoria_bd)
+    if categoria.is_valid():
+        categoria.save()
+        return Response(categoria.data, status=status.HTTP_202_ACCEPTED)
+
+@api_view(['DELETE'])
+def categoriaAPIremover(request, id):
+    categoria_bd = Categoria.objects.get(id=id)
+    if categoria_bd:
+        categoria_bd.delete()
+        return Response(status=status.HTTP_202_ACCEPTED)
+    else:
+        return Response(status=status.HTTP_404_NOT_FOUND)
