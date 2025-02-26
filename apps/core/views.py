@@ -54,12 +54,6 @@ def view_devolver_objeto(request, emprestimo_id):
         emprestimo.objeto.save()
     return redirect('listar_emprestimos')
 
-'''
-============= EXPRESS =============
-'''
-
-def view_remover_usuarioexpress(request):
-    return render(request, 'removerexpress.html')
 
 
 
@@ -116,30 +110,3 @@ def usuarioAPIlistar(request):
     usuarios = Usuario.objects.all()
     usuario_serializer = UsuarioSerializer(usuarios, many=True)
     return Response(usuario_serializer.data)
-
-@api_view(['PUT'])
-def usuarioAPIadicionar(request):
-    usuario = UsuarioSerializer(data=request.data)
-    if usuario.is_valid():
-        usuario.save()
-        return Response(usuario.data, status=status.HTTP_201_CREATED)
-
-'''
-@api_view(['POST'])
-def categoriaAPIatualizar(request, id):
-    categoria_bd = Categoria.objects.get(id=id)
-    categoria = CategoriaSerializer(data=request.data,
-                                 instance=categoria_bd)
-    if categoria.is_valid():
-        categoria.save()
-        return Response(categoria.data, status=status.HTTP_202_ACCEPTED)
-
-@api_view(['DELETE'])
-def categoriaAPIremover(request, id):
-    categoria_bd = Categoria.objects.get(id=id)
-    if categoria_bd:
-        categoria_bd.delete()
-        return Response(status=status.HTTP_202_ACCEPTED)
-    else:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-'''
