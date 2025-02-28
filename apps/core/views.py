@@ -110,3 +110,15 @@ def usuarioAPIlistar(request):
     usuarios = Usuario.objects.all()
     usuario_serializer = UsuarioSerializer(usuarios, many=True)
     return Response(usuario_serializer.data)
+
+
+
+'''
+============= OBJETOS API =============
+'''
+
+@api_view(['GET'])
+def objetoAPIlistar(request):
+    objetos = Objeto.objects.all()
+    objeto_serializer = ObjetoSerializer(objetos, many=True)
+    return Response(objeto_serializer.data)

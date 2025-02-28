@@ -9,4 +9,9 @@ class UsuarioSerializer(serializers.ModelSerializer):
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categoria
-        fields = ['nome','descricao']
+        fields = ['id','nome','descricao']
+
+class ObjetoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Objeto
+        fields = ['id','nome','descricao','categoria','disponivel']
