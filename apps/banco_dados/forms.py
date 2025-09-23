@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import *
 
 class RegistroForm(UserCreationForm):
+    matricula = forms.CharField(max_length=20, label="Matrícula")
+    
     class Meta:
         model = Usuario
         fields = ['matricula','nome','username','telefone','email']
