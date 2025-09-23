@@ -8,8 +8,8 @@ urlpatterns = [
     path('logout/', view_deslogar, name='logout'),
     path('registro/', view_registro, name='registro'),
     path('usuarios/', list_usuario, name='list_usuario'),
-    path('editar_usuario/<int:matricula>/', editar_registro, name='edit'),
-    path('remover_usuario/<int:matricula>/', remover_registro, name='remove'),
+    path('editar_usuario/<int:id>/', editar_registro, name='edit'),
+    path('remover_usuario/<int:id>/', remover_registro, name='remove'),
 
     # CATEGORIA
     path('cad_categoria/', cad_categoria, name='cad_categoria'),
