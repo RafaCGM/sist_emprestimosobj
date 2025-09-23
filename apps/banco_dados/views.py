@@ -49,8 +49,8 @@ def list_usuario(request):
     return render(request, 'list_usuarios.html', context)
 
 @login_required
-def editar_registro(request, matricula):
-    registro = Usuario.objects.get(matricula=matricula)
+def editar_registro(request, id):
+    registro = Usuario.objects.get(pk=id)
     form = RegistroForm(request.POST or None, instance=registro)
 
     if form.is_valid():
@@ -63,8 +63,8 @@ def editar_registro(request, matricula):
     return render(request, 'registration/registro.html', context)
 
 @login_required
-def remover_registro(request, matricula):
-    user = Usuario.objects.get(matricula=matricula)
+def remover_registro(request, id):
+    user = Usuario.objects.get(pk=id)
     user.delete()
     return redirect('list_usuario')
 
