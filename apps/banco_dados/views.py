@@ -31,7 +31,7 @@ def view_login(request):
 def view_registro(request):
     form = RegistroForm(request.POST or None)
     if form.is_valid():
-        form.save()
+        form.save(commit=False)
         return redirect('login')
     contexto = {
         'form_registro': form
