@@ -31,7 +31,7 @@ def view_login(request):
 def view_registro(request):
     form = RegistroForm(request.POST or None)
     if form.is_valid():
-        form.save(commit=False)
+        form.save()
         return redirect('login')
     contexto = {
         'form_registro': form
@@ -54,7 +54,7 @@ def editar_registro(request, matricula):
     form = RegistroForm(request.POST or None, instance=registro)
 
     if form.is_valid():
-        form.save(commit=False)
+        form.save()
         return redirect('list_usuario')
     
     context = {
