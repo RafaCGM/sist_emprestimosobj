@@ -2,60 +2,21 @@
 {
     "model": "banco_dados.usuario",
     "fields": {
-        "password": "pbkdf2_sha256$1000000$TeLheTfMgL57Db2qMpAI9T$mXqZaAQ2RTgJFhFkqTnPjwuFryasSWPzdhc9xYE+3BA=",
-        "last_login": "2025-09-23T01:25:04.269Z",
+        "password": "pbkdf2_sha256$1000000$5OgeFesg0dAG2EZuWowoBr$2bJ6pD+i3Vl2EkWpfaAGZjcOHm3qjzdSCjw8cBGdgcU=",
+        "last_login": null,
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
         "last_name": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2025-09-23T01:12:13.614Z",
-        "matricula": 0,
+        "date_joined": "2025-09-23T02:04:19.961Z",
+        "matricula": "000000",
         "nome": "admin",
         "telefone": "",
         "email": "admin@gmail.com",
         "groups": [],
         "user_permissions": []
-    }
-},
-{
-    "model": "banco_dados.usuario",
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$xzIw8l7auXaDpogsRO7y9F$wO4+pGyiPsy5Vgu/nXyO/UxBNs8JTPvnu8YA1peutdQ=",
-        "last_login": null,
-        "is_superuser": false,
-        "username": "Rafa",
-        "first_name": "",
-        "last_name": "",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-09-23T01:13:48.629Z",
-        "matricula": 20231198060007,
-        "nome": "Rafael Gomes do Nascimento",
-        "telefone": "84991565537",
-        "email": "rafagms505@gmail.com",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "banco_dados.categoria",
-    "pk": 1,
-    "fields": {
-        "nome": "Eletronicos",
-        "descricao": "Aparelhos como caixa de som, projetor e etc."
-    }
-},
-{
-    "model": "banco_dados.objeto",
-    "pk": 1,
-    "fields": {
-        "nome": "Projetor Epson",
-        "descricao": "Projetor 100% funcional e nada duvidoso.",
-        "dataCadastro": "2025-09-23T01:21:15.182Z",
-        "categoria": 1,
-        "disponivel": true
     }
 }
 ]
