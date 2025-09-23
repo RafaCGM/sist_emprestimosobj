@@ -54,7 +54,7 @@ def editar_registro(request, matricula):
     form = RegistroForm(request.POST or None, instance=registro)
 
     if form.is_valid():
-        form.save()
+        form.save(commit=False)
         return redirect('list_usuario')
     
     context = {

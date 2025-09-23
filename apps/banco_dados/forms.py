@@ -10,10 +10,6 @@ class RegistroForm(UserCreationForm):
         widget=forms.TextInput(attrs={'type': 'text'})
     )
 
-    nome = forms.CharField(max_length=300, label="Nome")
-    telefone = forms.CharField(max_length=12, label="Telefone")
-    email = forms.EmailField(max_length=200, label="E-mail")
-
     class Meta:
         model = Usuario
         fields = ['matricula','nome','username','telefone','email']
