@@ -50,7 +50,7 @@ def list_usuario(request):
 
 @login_required
 def editar_registro(request, matricula):
-    registro = Usuario.objects.get(pk=matricula)
+    registro = Usuario.objects.get(matricula=matricula)
     form = RegistroForm(request.POST or None, instance=registro)
 
     if form.is_valid():
@@ -64,7 +64,7 @@ def editar_registro(request, matricula):
 
 @login_required
 def remover_registro(request, matricula):
-    user = Usuario.objects.get(pk=matricula)
+    user = Usuario.objects.get(matricula=matricula)
     user.delete()
     return redirect('list_usuario')
 

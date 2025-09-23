@@ -4,12 +4,12 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class Usuario(AbstractUser):
-    matricula = models.IntegerField('Matricula', primary_key=True)
+    matricula = models.IntegerField('Matricula', null=False, unique=True)
     nome = models.CharField('Nome', max_length=300)
     telefone = models.CharField('Telefone', max_length=12)
     email = models.CharField('Email', max_length=200, unique = True)
 
-    REQUIRED_FIELDS = ['nome','username']
+    REQUIRED_FIELDS = ['nome','username', 'matricula']
     USERNAME_FIELD = 'email'
 
 
