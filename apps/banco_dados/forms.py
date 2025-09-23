@@ -4,21 +4,11 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import *
 
 class RegistroForm(UserCreationForm):
-    matricula = forms.CharField(
-        max_length=20, 
-        label="Matrícula",
-        widget=forms.TextInput(attrs={'type': 'text'})
-    )
-
+    matricula = forms.CharField(max_length=20, label="Matrícula")
+    
     class Meta:
         model = Usuario
         fields = ['matricula','nome','username','telefone','email']
-
-    def clean_matricula(self):
-        matricula = self.cleaned_data['matricula']
-        if not matricula.isdigit():
-            raise forms.ValidationError("A matrícula deve conter apenas números.")
-        return matricula
 
 class CategoriaForm(ModelForm):
     class Meta:
