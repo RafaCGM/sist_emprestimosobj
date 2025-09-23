@@ -43,7 +43,9 @@
                 {{ form_registro.email }}
             </div>     
         </div>
-    
+        
+        {% if not editar %}
+
         <!-- Senha -->
         <div class="form_input">
             <div class="form_field2">
@@ -60,6 +62,7 @@
             </div>
         </div>
         
+        {% endif %}
 
         <!-- Botão de Envio -->
         <div class="form_botao">

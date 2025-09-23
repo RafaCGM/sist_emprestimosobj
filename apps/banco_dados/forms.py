@@ -1,14 +1,19 @@
 from django import forms
 from django.forms import ModelForm
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import *
 
 class RegistroForm(UserCreationForm):
-    matricula = forms.CharField(max_length=20, label="Matrícula")
-    
     class Meta:
         model = Usuario
-        fields = ['matricula','nome','username','telefone','email']
+        fields = ['matricula', 'nome', 'username', 'telefone', 'email', 'password1', 'password2']
+
+class EditUsuarioForm(UserChangeForm):
+    password = None
+
+    class Meta:
+        model = Usuario
+        fields = ['matricula', 'nome', 'username', 'telefone', 'email']
 
 class CategoriaForm(ModelForm):
     class Meta:

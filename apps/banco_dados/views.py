@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -34,7 +34,8 @@ def view_registro(request):
         form.save()
         return redirect('login')
     contexto = {
-        'form_registro': form
+        'form_registro': form,
+        'editar': False
     }
 
     return render(request, 'registration/registro.html', contexto)
@@ -50,16 +51,18 @@ def list_usuario(request):
 
 @login_required
 def editar_registro(request, id):
-    registro = Usuario.objects.get(pk=id)
-    form = RegistroForm(request.POST or None, instance=registro)
+    usuario = get_object_or_404(Usuario, pk=id)
+    form = EditUsuarioForm(request.POST or None, instance=usuario)
+
+    context = {
+        'form_registro': form,
+        'editar': True
+    }
 
     if form.is_valid():
         form.save()
         return redirect('list_usuario')
-    
-    context = {
-        'form_registro': form
-    }
+
     return render(request, 'registration/registro.html', context)
 
 @login_required
