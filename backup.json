@@ -1,75 +1,5 @@
 [
 {
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "admin",
-        "model": "logentry"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "auth",
-        "model": "permission"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "auth",
-        "model": "group"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "contenttypes",
-        "model": "contenttype"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "sessions",
-        "model": "session"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "banco_dados",
-        "model": "categoria"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "banco_dados",
-        "model": "usuario"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "banco_dados",
-        "model": "objeto"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "banco_dados",
-        "model": "emprestimo"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "fields": {
-        "app_label": "banco_dados",
-        "model": "reserva"
-    }
-},
-{
     "model": "sessions.session",
     "pk": "i0it48ygf28vpqcanqtkxadegw09ytp5",
     "fields": {
@@ -83,6 +13,46 @@
     "fields": {
         "session_data": ".eJxVjEEOwiAQRe_C2pAChYJL9z0DYYYZWzWQlHZlvLvWdKGLv3rv_aeIaVunuDVa4pzFWWhlgtLfidMvhYR3KruSb6lcq8Ra1mUGuSvyoE2ONdPjcrh_B1Nq06futOnABfSKOPUDAxMGp3qnkbxiAPIGQtaAzF5ZY9ki8mBN8h5zD-L1Bn86OwI:1uJamn:4fJkpfC25qOQmtbOR5p0VNf7Qo3-X5wRzJjGfjApwvc",
         "expire_date": "2025-06-09T16:34:49.954Z"
+    }
+},
+{
+    "model": "banco_dados.usuario",
+    "pk": 21391239123,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$cUTgfrmt9zK4UXwgZPWqXv$/av13/1eLhQpOUYTMVdbpOqURMGSdzdJSYRP7xhMVbw=",
+        "last_login": "2025-05-26T16:34:49.949Z",
+        "is_superuser": false,
+        "username": "Prenho",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-26T16:34:42.012Z",
+        "nome": "Pedro",
+        "telefone": "9454322342",
+        "email": "pedrolinkpark@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "banco_dados.usuario",
+    "pk": 20231198060007,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$ptyHyLXPP46lF5XlqVkQpf$Hd+w1ntTA5j67zJFbVUH2igsV8Lt0hbDQt005fh36bA=",
+        "last_login": "2025-05-26T16:31:53.236Z",
+        "is_superuser": false,
+        "username": "Rafa",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-26T16:18:39.623Z",
+        "nome": "Rafael Gomes",
+        "telefone": "08499999999",
+        "email": "rafagms892@gmail.com",
+        "groups": [],
+        "user_permissions": []
     }
 },
 {
@@ -105,490 +75,10 @@
     }
 },
 {
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add log entry",
-        "content_type": [
-            "admin",
-            "logentry"
-        ],
-        "codename": "add_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change log entry",
-        "content_type": [
-            "admin",
-            "logentry"
-        ],
-        "codename": "change_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete log entry",
-        "content_type": [
-            "admin",
-            "logentry"
-        ],
-        "codename": "delete_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view log entry",
-        "content_type": [
-            "admin",
-            "logentry"
-        ],
-        "codename": "view_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add permission",
-        "content_type": [
-            "auth",
-            "permission"
-        ],
-        "codename": "add_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change permission",
-        "content_type": [
-            "auth",
-            "permission"
-        ],
-        "codename": "change_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete permission",
-        "content_type": [
-            "auth",
-            "permission"
-        ],
-        "codename": "delete_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view permission",
-        "content_type": [
-            "auth",
-            "permission"
-        ],
-        "codename": "view_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add group",
-        "content_type": [
-            "auth",
-            "group"
-        ],
-        "codename": "add_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change group",
-        "content_type": [
-            "auth",
-            "group"
-        ],
-        "codename": "change_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete group",
-        "content_type": [
-            "auth",
-            "group"
-        ],
-        "codename": "delete_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view group",
-        "content_type": [
-            "auth",
-            "group"
-        ],
-        "codename": "view_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add content type",
-        "content_type": [
-            "contenttypes",
-            "contenttype"
-        ],
-        "codename": "add_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change content type",
-        "content_type": [
-            "contenttypes",
-            "contenttype"
-        ],
-        "codename": "change_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete content type",
-        "content_type": [
-            "contenttypes",
-            "contenttype"
-        ],
-        "codename": "delete_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view content type",
-        "content_type": [
-            "contenttypes",
-            "contenttype"
-        ],
-        "codename": "view_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add session",
-        "content_type": [
-            "sessions",
-            "session"
-        ],
-        "codename": "add_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change session",
-        "content_type": [
-            "sessions",
-            "session"
-        ],
-        "codename": "change_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete session",
-        "content_type": [
-            "sessions",
-            "session"
-        ],
-        "codename": "delete_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view session",
-        "content_type": [
-            "sessions",
-            "session"
-        ],
-        "codename": "view_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add categoria",
-        "content_type": [
-            "banco_dados",
-            "categoria"
-        ],
-        "codename": "add_categoria"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change categoria",
-        "content_type": [
-            "banco_dados",
-            "categoria"
-        ],
-        "codename": "change_categoria"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete categoria",
-        "content_type": [
-            "banco_dados",
-            "categoria"
-        ],
-        "codename": "delete_categoria"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view categoria",
-        "content_type": [
-            "banco_dados",
-            "categoria"
-        ],
-        "codename": "view_categoria"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add user",
-        "content_type": [
-            "banco_dados",
-            "usuario"
-        ],
-        "codename": "add_usuario"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change user",
-        "content_type": [
-            "banco_dados",
-            "usuario"
-        ],
-        "codename": "change_usuario"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete user",
-        "content_type": [
-            "banco_dados",
-            "usuario"
-        ],
-        "codename": "delete_usuario"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view user",
-        "content_type": [
-            "banco_dados",
-            "usuario"
-        ],
-        "codename": "view_usuario"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add objeto",
-        "content_type": [
-            "banco_dados",
-            "objeto"
-        ],
-        "codename": "add_objeto"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change objeto",
-        "content_type": [
-            "banco_dados",
-            "objeto"
-        ],
-        "codename": "change_objeto"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete objeto",
-        "content_type": [
-            "banco_dados",
-            "objeto"
-        ],
-        "codename": "delete_objeto"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view objeto",
-        "content_type": [
-            "banco_dados",
-            "objeto"
-        ],
-        "codename": "view_objeto"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add emprestimo",
-        "content_type": [
-            "banco_dados",
-            "emprestimo"
-        ],
-        "codename": "add_emprestimo"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change emprestimo",
-        "content_type": [
-            "banco_dados",
-            "emprestimo"
-        ],
-        "codename": "change_emprestimo"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete emprestimo",
-        "content_type": [
-            "banco_dados",
-            "emprestimo"
-        ],
-        "codename": "delete_emprestimo"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view emprestimo",
-        "content_type": [
-            "banco_dados",
-            "emprestimo"
-        ],
-        "codename": "view_emprestimo"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add reserva",
-        "content_type": [
-            "banco_dados",
-            "reserva"
-        ],
-        "codename": "add_reserva"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change reserva",
-        "content_type": [
-            "banco_dados",
-            "reserva"
-        ],
-        "codename": "change_reserva"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete reserva",
-        "content_type": [
-            "banco_dados",
-            "reserva"
-        ],
-        "codename": "delete_reserva"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view reserva",
-        "content_type": [
-            "banco_dados",
-            "reserva"
-        ],
-        "codename": "view_reserva"
-    }
-},
-{
-    "model": "banco_dados.usuario",
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$cUTgfrmt9zK4UXwgZPWqXv$/av13/1eLhQpOUYTMVdbpOqURMGSdzdJSYRP7xhMVbw=",
-        "last_login": "2025-05-26T16:34:49.949Z",
-        "is_superuser": false,
-        "username": "Prenho",
-        "first_name": "",
-        "last_name": "",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-05-26T16:34:42.012Z",
-        "nome": "Pedro",
-        "telefone": "9454322342",
-        "email": "pedrolinkpark@gmail.com",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "banco_dados.usuario",
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$ptyHyLXPP46lF5XlqVkQpf$Hd+w1ntTA5j67zJFbVUH2igsV8Lt0hbDQt005fh36bA=",
-        "last_login": "2025-05-26T16:31:53.236Z",
-        "is_superuser": false,
-        "username": "Rafa",
-        "first_name": "",
-        "last_name": "",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-05-26T16:18:39.623Z",
-        "nome": "Rafael Gomes",
-        "telefone": "08499999999",
-        "email": "rafagms892@gmail.com",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
     "model": "banco_dados.emprestimo",
     "pk": 1,
     "fields": {
-        "usuario": [
-            "pedrolinkpark@gmail.com"
-        ],
+        "usuario": 21391239123,
         "objeto": 1,
         "dataEmprestimo": "2025-05-26T16:35:24.639Z",
         "dataDevolucao": "2025-05-26T16:35:34.433Z",
